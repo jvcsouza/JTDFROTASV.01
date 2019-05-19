@@ -1,0 +1,13 @@
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\JTDFROTAS.exe.config
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\JTDFROTAS.exe
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\JTDFROTAS.pdb
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.csprojResolveAssemblyReference.cache
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Form1.resources
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Properties.Resources.resources
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.csproj.GenerateResource.Cache
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.exe
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.pdb
+c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.FormLogin.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.FormMarca.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.ConsultaMarca.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.ConsultaModelo.resources
