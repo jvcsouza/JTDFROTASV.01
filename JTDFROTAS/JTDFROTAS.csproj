@@ -94,6 +94,24 @@
     <Compile Include="geralVeiculos\FormMarca.Designer.cs">
       <DependentUpon>FormMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="geralVeiculos\FormModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="geralVeiculos\FormModelo.Designer.cs">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\ConsultaPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoa\ConsultaPessoa.Designer.cs">
+      <DependentUpon>ConsultaPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\FormPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoa\FormPessoa.Designer.cs">
+      <DependentUpon>FormPessoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -110,6 +128,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="geralVeiculos\FormMarca.resx">
       <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="geralVeiculos\FormModelo.resx">
+      <DependentUpon>FormModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoa\ConsultaPessoa.resx">
+      <DependentUpon>ConsultaPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoa\FormPessoa.resx">
+      <DependentUpon>FormPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

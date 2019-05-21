@@ -2,6 +2,7 @@
 using JTDFROTAS.geralVeiculos;
 using System.Windows.Forms;
 using JTDFROTAS.Classes;
+using JTDFROTAS.Pessoa;
 
 namespace JTDFROTAS
 {
@@ -66,6 +67,15 @@ namespace JTDFROTAS
             ConsultaModelo cm = new ConsultaModelo();
             cm.MdiParent = this;
             cm.Show();
+        }
+
+        private void btnCadFisica_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Pessoa"))
+                return;
+            FormPessoa fPessoa = new FormPessoa();
+            fPessoa.MdiParent = this;
+            fPessoa.Show();
         }
     }
 }

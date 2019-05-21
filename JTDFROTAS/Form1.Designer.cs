@@ -45,7 +45,7 @@
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.juridicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCadFisica = new System.Windows.Forms.ToolStripMenuItem();
             this.juridicaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.motoristaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -156,21 +156,21 @@
             // btnCadMarca
             // 
             this.btnCadMarca.Name = "btnCadMarca";
-            this.btnCadMarca.Size = new System.Drawing.Size(152, 22);
+            this.btnCadMarca.Size = new System.Drawing.Size(120, 22);
             this.btnCadMarca.Text = "Marca";
             this.btnCadMarca.Click += new System.EventHandler(this.btnCadMarca_Click);
             // 
             // btnCadModelo
             // 
             this.btnCadModelo.Name = "btnCadModelo";
-            this.btnCadModelo.Size = new System.Drawing.Size(152, 22);
+            this.btnCadModelo.Size = new System.Drawing.Size(120, 22);
             this.btnCadModelo.Text = "Modelo";
             this.btnCadModelo.Click += new System.EventHandler(this.btnCadModelo_Click);
             // 
             // veículoToolStripMenuItem
             // 
             this.veículoToolStripMenuItem.Name = "veículoToolStripMenuItem";
-            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.veículoToolStripMenuItem.Text = "Veículo";
             // 
             // toolStripSeparator2
@@ -195,29 +195,30 @@
             // pessoaToolStripMenuItem
             // 
             this.pessoaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.juridicaToolStripMenuItem,
+            this.btnCadFisica,
             this.juridicaToolStripMenuItem1,
             this.motoristaToolStripMenuItem});
             this.pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
             this.pessoaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.pessoaToolStripMenuItem.Text = "Pessoa";
             // 
-            // juridicaToolStripMenuItem
+            // btnCadFisica
             // 
-            this.juridicaToolStripMenuItem.Name = "juridicaToolStripMenuItem";
-            this.juridicaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.juridicaToolStripMenuItem.Text = "Fisica";
+            this.btnCadFisica.Name = "btnCadFisica";
+            this.btnCadFisica.Size = new System.Drawing.Size(152, 22);
+            this.btnCadFisica.Text = "Fisica";
+            this.btnCadFisica.Click += new System.EventHandler(this.btnCadFisica_Click);
             // 
             // juridicaToolStripMenuItem1
             // 
             this.juridicaToolStripMenuItem1.Name = "juridicaToolStripMenuItem1";
-            this.juridicaToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
+            this.juridicaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.juridicaToolStripMenuItem1.Text = "Juridica";
             // 
             // motoristaToolStripMenuItem
             // 
             this.motoristaToolStripMenuItem.Name = "motoristaToolStripMenuItem";
-            this.motoristaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.motoristaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.motoristaToolStripMenuItem.Text = "Motorista";
             // 
             // toolStripSeparator1
@@ -391,7 +392,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem geralSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pessoaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem juridicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnCadFisica;
         private System.Windows.Forms.ToolStripMenuItem juridicaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem motoristaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMarca));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
-            this.btnGravar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,32 @@
             this.groupBox1.Size = new System.Drawing.Size(300, 81);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconCancel;
+            this.btnCancelar.Location = new System.Drawing.Point(87, 17);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 57);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Image = global::JTDFROTAS.Properties.Resources.iconSave;
+            this.btnGravar.Location = new System.Drawing.Point(6, 17);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 57);
+            this.btnGravar.TabIndex = 1;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGravar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -95,38 +121,12 @@
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // btnGravar
-            // 
-            this.btnGravar.Image = global::JTDFROTAS.Properties.Resources.iconSave;
-            this.btnGravar.Location = new System.Drawing.Point(6, 17);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 57);
-            this.btnGravar.TabIndex = 1;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGravar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconCancel;
-            this.btnCancelar.Location = new System.Drawing.Point(87, 17);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 57);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // FormMarca
             // 
             this.AcceptButton = this.btnGravar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(306, 217);
             this.Controls.Add(this.chkAtivo);

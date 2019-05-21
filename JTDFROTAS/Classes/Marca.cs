@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace JTDFROTAS.Classes
 {
@@ -19,7 +20,7 @@ namespace JTDFROTAS.Classes
 
         public Marca(String nome)
         {
-            
+
         }
         public Marca(int id, String nome, bool ativo)
         {
@@ -53,7 +54,22 @@ namespace JTDFROTAS.Classes
             return Conexao.ExecAdapter();
         }
 
-        public bool Buscar(int id)
+        public static Marca Buscar(int id)
+        {
+            Marca m;
+            Conexao.Query = $"SELECT * FROM MARCAVEICULO"
+                            + " WHERE ID = " + id
+                            + " AND ATIVO = 1";
+            SqlDataReader dr = Conexao.ExecReader();
+            if (dr.Read())
+                m = new Marca((int) dr["id"], dr["nome"].ToString(), (bool) dr["ativo"]);
+            else
+                m = new Marca(0, null, false);
+            dr.Close();
+            return m;
+        }
+
+        bool ICRUD.Buscar(int id)
         {
             throw new NotImplementedException();
         }

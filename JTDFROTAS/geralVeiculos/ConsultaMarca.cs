@@ -15,6 +15,7 @@ namespace JTDFROTAS.geralVeiculos
         }
         public ConsultaMarca(TextBox campo)
         {
+            InitializeComponent();
             this.campo = campo;
             selecionar = true;
         }

@@ -11,3 +11,6 @@ c:\users\joao\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debu
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.FormMarca.resources
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.ConsultaMarca.resources
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.ConsultaModelo.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.FormModelo.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Pessoa.ConsultaPessoa.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Pessoa.FormPessoa.resources

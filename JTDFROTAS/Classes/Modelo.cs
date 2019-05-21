@@ -7,16 +7,31 @@ using System.Data;
 
 namespace JTDFROTAS.Classes
 {
-    class Modelo : ICRUD
+    public class Modelo : ICRUD
     {
+        private int id, codMarca;
+        private String nome;
+        private bool ativo;
+
         public Modelo()
         {
 
         }
+        public Modelo(int id, int codMarca, String nome)
+        {
+            Id = id;
+            CodMarca = codMarca;
+            Nome = nome;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public int CodMarca { get => codMarca; set => codMarca = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public bool Ativo { get => ativo; set => ativo = value; }
 
         public static DataTable Listar(bool ativo)
         {
-            Conexao.Query = @"SELECT M.ID, MA.NOME AS MARCA, M.NOME AS MODELO
+            Conexao.Query = @"SELECT M.ID, MA.ID AS CODMARCA, MA.NOME AS MARCA, M.NOME AS MODELO
                             FROM MARCAVEICULO MA
                             INNER JOIN MODELOVEICULO M
                             ON MA.ID = M.CODMARCAVEICULO
