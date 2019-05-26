@@ -3,6 +3,7 @@ using JTDFROTAS.geralVeiculos;
 using System.Windows.Forms;
 using JTDFROTAS.Classes;
 using JTDFROTAS.Pessoa;
+using JTDFROTAS.geralSistema.origemDestino;
 
 namespace JTDFROTAS
 {
@@ -76,6 +77,24 @@ namespace JTDFROTAS
             FormPessoa fPessoa = new FormPessoa();
             fPessoa.MdiParent = this;
             fPessoa.Show();
+        }
+
+        private void btnCadUF_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Estado"))
+                return;
+            ConsultaUF consUF = new ConsultaUF();
+            consUF.MdiParent = this;
+            consUF.Show();
+        }
+
+        private void btnCadCidade_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Cidade"))
+                return;
+            ConsultaCidade consCidade = new ConsultaCidade();
+            consCidade.MdiParent = this;
+            consCidade.Show();
         }
     }
 }

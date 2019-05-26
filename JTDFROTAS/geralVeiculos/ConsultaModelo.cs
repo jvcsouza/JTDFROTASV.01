@@ -38,7 +38,7 @@ namespace JTDFROTAS.geralVeiculos
 
         private void dgvModelo_DataSourceChanged(object sender, EventArgs e)
         {
-            if(dgvModelo.DataSource != null)
+            if(dgvModelo.Rows.Count > 0)
                 dgvModelo.Columns["CODMARCA"].Visible = false;
         }
     }

@@ -18,7 +18,7 @@ namespace JTDFROTAS.Classes
             {
                 String valor = Regex.Replace(value, "[^0-9]", "");
                 if (valor.Length != 14)
-                    new ArgumentException("Valores não correspondem a um CNPJ Válido!");
+                    throw new ArgumentException("Valores não correspondem a um CNPJ Válido!");
                 cnpj = value;
             }
         }

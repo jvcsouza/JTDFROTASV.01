@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Data;
 
 namespace JTDFROTAS.Classes
 {
-    class UF : ICRUD
+    public class UF : ICRUD
     {
         private int id;
         private String nome;
@@ -28,10 +29,33 @@ namespace JTDFROTAS.Classes
                 sigla = value.ToUpper();
             }
         }
+
+        public int Id { get => id; set => id = value; }
+
         public UF(String nome, String sigla)
         {
             Nome = nome;
             Sigla = sigla;
+        }
+        public UF(int id, String nome, String sigla)
+        {
+            this.Id = id;
+            Nome = nome;
+            Sigla = sigla;
+        }
+
+        public static DataTable Listar(bool ativo)
+        {
+            Conexao.Query = @"SELECT ID, NOME, UF AS SIGLA 
+                            FROM UF
+                            WHERE ATIVO = " + (ativo ? 1 : 0);
+            return Conexao.ExecAdapter();
+        }
+
+        public static DataTable Listar()
+        {
+            Conexao.Query = @"SELECT ID, NOME, UF AS SIGLA FROM UF";
+            return Conexao.ExecAdapter();
         }
 
         public bool Registrar()
