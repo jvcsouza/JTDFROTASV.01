@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using JTDFROTAS.Movimento;
+using JTDFROTAS.geralVeiculos;
 
 namespace JTDFROTAS
 {
@@ -14,7 +15,7 @@ namespace JTDFROTAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormViagem());
         }
     }
 }

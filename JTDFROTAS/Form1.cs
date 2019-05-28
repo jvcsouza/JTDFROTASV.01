@@ -96,5 +96,15 @@ namespace JTDFROTAS
             consCidade.MdiParent = this;
             consCidade.Show();
         }
+
+        private void btnCadVeiculo_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Veiculo"))
+                return;
+            ConsultaVeiculo consVeiculo = new ConsultaVeiculo();
+            consVeiculo.MdiParent = this;
+            consVeiculo.Show();
+        }
+        
     }
 }

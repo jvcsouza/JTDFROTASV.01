@@ -1,6 +1,6 @@
 ﻿namespace JTDFROTAS.geralVeiculos
 {
-    partial class ConsultaModelo
+    partial class ConsultaVeiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaModelo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaVeiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.rdbNao = new System.Windows.Forms.RadioButton();
             this.rdbSim = new System.Windows.Forms.RadioButton();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvMarca = new System.Windows.Forms.DataGridView();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvModelo = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,21 +63,6 @@
             this.groupBox1.Size = new System.Drawing.Size(580, 78);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnEditar.Image = global::JTDFROTAS.Properties.Resources.iconEdit;
-            this.btnEditar.Location = new System.Drawing.Point(265, 13);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(77, 57);
-            this.btnEditar.TabIndex = 8;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Visible = false;
             // 
             // groupBox2
             // 
@@ -98,7 +85,6 @@
             this.rdbTodos.TabIndex = 2;
             this.rdbTodos.Text = "Todos";
             this.rdbTodos.UseVisualStyleBackColor = true;
-            this.rdbTodos.CheckedChanged += new System.EventHandler(this.rdbTodos_CheckedChanged);
             // 
             // rdbNao
             // 
@@ -109,7 +95,6 @@
             this.rdbNao.TabIndex = 1;
             this.rdbNao.Text = "Não";
             this.rdbNao.UseVisualStyleBackColor = true;
-            this.rdbNao.CheckedChanged += new System.EventHandler(this.rdbNao_CheckedChanged);
             // 
             // rdbSim
             // 
@@ -122,7 +107,71 @@
             this.rdbSim.TabStop = true;
             this.rdbSim.Text = "Sim";
             this.rdbSim.UseVisualStyleBackColor = true;
-            this.rdbSim.CheckedChanged += new System.EventHandler(this.rdbSim_CheckedChanged);
+            // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(15, 107);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(190, 24);
+            this.txtBusca.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Buscar p/ Nome:";
+            // 
+            // dgvMarca
+            // 
+            this.dgvMarca.AllowUserToAddRows = false;
+            this.dgvMarca.AllowUserToDeleteRows = false;
+            this.dgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvMarca.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMarca.Location = new System.Drawing.Point(9, 139);
+            this.dgvMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMarca.MultiSelect = false;
+            this.dgvMarca.Name = "dgvMarca";
+            this.dgvMarca.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMarca.Size = new System.Drawing.Size(573, 236);
+            this.dgvMarca.TabIndex = 8;
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(229, 107);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(135, 25);
+            this.cboCliente.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(226, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Buscar p/ Cliente:";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnEditar.Image = global::JTDFROTAS.Properties.Resources.iconEdit;
+            this.btnEditar.Location = new System.Drawing.Point(265, 13);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(77, 57);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
             // 
             // btnSelecionar
             // 
@@ -166,47 +215,11 @@
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(132, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(319, 24);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar p/ Nome:";
-            // 
-            // dgvModelo
-            // 
-            this.dgvModelo.AllowUserToAddRows = false;
-            this.dgvModelo.AllowUserToDeleteRows = false;
-            this.dgvModelo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModelo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvModelo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvModelo.Location = new System.Drawing.Point(9, 115);
-            this.dgvModelo.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvModelo.MultiSelect = false;
-            this.dgvModelo.Name = "dgvModelo";
-            this.dgvModelo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvModelo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModelo.Size = new System.Drawing.Size(573, 260);
-            this.dgvModelo.TabIndex = 8;
-            this.dgvModelo.DataSourceChanged += new System.EventHandler(this.dgvModelo_DataSourceChanged);
-            this.dgvModelo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModelo_CellClick);
-            this.dgvModelo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModelo_CellDoubleClick);
-            // 
             // button2
             // 
             this.button2.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(455, 82);
+            this.button2.Location = new System.Drawing.Point(453, 105);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(125, 26);
@@ -214,31 +227,32 @@
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // ConsultaModelo
+            // ConsultaVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 386);
+            this.ClientSize = new System.Drawing.Size(590, 381);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cboCliente);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvModelo);
+            this.Controls.Add(this.dgvMarca);
             this.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ConsultaModelo";
+            this.Name = "ConsultaVeiculo";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consultar Modelo";
-            this.Load += new System.EventHandler(this.ConsultaModelo_Load);
+            this.Text = "Consultar Veiculo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,8 +270,10 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvModelo;
+        private System.Windows.Forms.DataGridView dgvMarca;
+        private System.Windows.Forms.ComboBox cboCliente;
+        private System.Windows.Forms.Label label2;
     }
 }

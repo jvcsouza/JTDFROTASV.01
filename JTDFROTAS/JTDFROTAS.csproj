@@ -46,6 +46,9 @@
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Desktop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -73,6 +76,7 @@
     <Compile Include="Classes\BoxAlert.cs" />
     <Compile Include="Classes\Cidade.cs" />
     <Compile Include="Classes\Conexao.cs" />
+    <Compile Include="Classes\MapsAPI.cs" />
     <Compile Include="Classes\ICRUD.cs" />
     <Compile Include="Classes\Juridica.cs" />
     <Compile Include="Classes\Fisica.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Classes\Motorista.cs" />
     <Compile Include="Classes\Peca.cs" />
     <Compile Include="Classes\Pessoa.cs" />
+    <Compile Include="Classes\ReceitaAPI.cs" />
     <Compile Include="Classes\Tela.cs" />
     <Compile Include="Classes\Telefone.cs" />
     <Compile Include="Classes\UF.cs" />
@@ -134,6 +139,12 @@
     <Compile Include="geralVeiculos\ConsultaModelo.Designer.cs">
       <DependentUpon>ConsultaModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="geralVeiculos\ConsultaVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="geralVeiculos\ConsultaVeiculo.Designer.cs">
+      <DependentUpon>ConsultaVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="geralVeiculos\FormMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +162,12 @@
     </Compile>
     <Compile Include="FormViagem.Designer.cs">
       <DependentUpon>FormViagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="geralVeiculos\FormVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="geralVeiculos\FormVeiculo.Designer.cs">
+      <DependentUpon>FormVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Pessoa\ConsultaPessoa.cs">
       <SubType>Form</SubType>
@@ -190,6 +207,9 @@
     <EmbeddedResource Include="geralVeiculos\ConsultaModelo.resx">
       <DependentUpon>ConsultaModelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="geralVeiculos\ConsultaVeiculo.resx">
+      <DependentUpon>ConsultaVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="geralVeiculos\FormMarca.resx">
       <DependentUpon>FormMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormViagem.resx">
       <DependentUpon>FormViagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="geralVeiculos\FormVeiculo.resx">
+      <DependentUpon>FormVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pessoa\ConsultaPessoa.resx">
       <DependentUpon>ConsultaPessoa.cs</DependentUpon>
@@ -230,7 +253,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Imagens\" />
     <Folder Include="Movimento\" />
   </ItemGroup>
   <ItemGroup>

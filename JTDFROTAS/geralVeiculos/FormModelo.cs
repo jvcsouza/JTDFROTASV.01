@@ -23,6 +23,7 @@ namespace JTDFROTAS.geralVeiculos
             txtCodMarca.Text = m.CodMarca.ToString();
             txtNome.Text = m.Nome;
             txtId.Text = m.Id.ToString();
+            chkAtivo.Checked = m.Ativo;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

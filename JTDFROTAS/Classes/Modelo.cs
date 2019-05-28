@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace JTDFROTAS.Classes
 {
@@ -17,11 +18,12 @@ namespace JTDFROTAS.Classes
         {
 
         }
-        public Modelo(int id, int codMarca, String nome)
+        public Modelo(int id, int codMarca, String nome, bool ativo)
         {
             Id = id;
             CodMarca = codMarca;
             Nome = nome;
+            Ativo = ativo;
         }
 
         public int Id { get => id; set => id = value; }
@@ -31,14 +33,38 @@ namespace JTDFROTAS.Classes
 
         public static DataTable Listar(bool ativo)
         {
-            Conexao.Query = @"SELECT M.ID, MA.ID AS CODMARCA, MA.NOME AS MARCA, M.NOME AS MODELO
+            Conexao.Query = @"SELECT M.ID, MA.ID AS CODMARCA, MA.NOME AS MARCA, M.NOME AS MODELO, M.ATIVO
                             FROM MARCAVEICULO MA
                             INNER JOIN MODELOVEICULO M
                             ON MA.ID = M.CODMARCAVEICULO
                             WHERE M.ATIVO = " + (ativo ? '1' : '0')
                             + " ORDER BY MODELO";
             return Conexao.ExecAdapter();
+        }
 
+        public static DataTable Listar()
+        {
+            Conexao.Query = @"SELECT M.ID, MA.ID AS CODMARCA, MA.NOME AS MARCA, M.NOME AS MODELO, M.ATIVO
+                            FROM MARCAVEICULO MA
+                            INNER JOIN MODELOVEICULO M
+                            ON MA.ID = M.CODMARCAVEICULO
+                            ORDER BY MODELO";
+            return Conexao.ExecAdapter();
+        }
+
+        public static Modelo Buscar(int id)
+        {
+            Modelo m;
+            Conexao.Query = $"SELECT * FROM MODELOVEICULO"
+                            + " WHERE ID = " + id
+                            + " AND ATIVO = 1";
+            SqlDataReader dr = Conexao.ExecReader();
+            if (dr.Read())
+                m = new Modelo((int) dr["id"], (int) dr["codmarcaveiculo"], dr["nome"].ToString(), (bool) dr["ativo"]);
+            else
+                m = new Modelo(0, 0, "", false);
+            dr.Close();
+            return m;
         }
 
         public bool Atualizar()
@@ -46,7 +72,7 @@ namespace JTDFROTAS.Classes
             throw new NotImplementedException();
         }
 
-        public bool Buscar(int id)
+        bool ICRUD.Buscar(int id)
         {
             throw new NotImplementedException();
         }

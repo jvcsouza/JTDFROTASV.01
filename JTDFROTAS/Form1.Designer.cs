@@ -40,7 +40,8 @@
             this.geralVeículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCadMarca = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCadModelo = new System.Windows.Forms.ToolStripMenuItem();
-            this.veículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCadVeiculo2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCadVeiculo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.manutençãoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +66,6 @@
             this.statusBarHours = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusBarUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.TimerUpdateDate = new System.Windows.Forms.Timer(this.components);
-            this.viagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Bar.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +152,7 @@
             this.geralVeículosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCadMarca,
             this.btnCadModelo,
-            this.veículoToolStripMenuItem});
+            this.btnCadVeiculo2});
             this.geralVeículosToolStripMenuItem.Name = "geralVeículosToolStripMenuItem";
             this.geralVeículosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.geralVeículosToolStripMenuItem.Text = "Geral-Veículos";
@@ -170,11 +171,20 @@
             this.btnCadModelo.Text = "Modelo";
             this.btnCadModelo.Click += new System.EventHandler(this.btnCadModelo_Click);
             // 
-            // veículoToolStripMenuItem
+            // btnCadVeiculo2
             // 
-            this.veículoToolStripMenuItem.Name = "veículoToolStripMenuItem";
-            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.veículoToolStripMenuItem.Text = "Veículo";
+            this.btnCadVeiculo2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnCadVeiculo});
+            this.btnCadVeiculo2.Name = "btnCadVeiculo2";
+            this.btnCadVeiculo2.Size = new System.Drawing.Size(152, 22);
+            this.btnCadVeiculo2.Text = "Veículo";
+            // 
+            // btnCadVeiculo
+            // 
+            this.btnCadVeiculo.Name = "btnCadVeiculo";
+            this.btnCadVeiculo.Size = new System.Drawing.Size(152, 22);
+            this.btnCadVeiculo.Text = "Veiculo";
+            this.btnCadVeiculo.Click += new System.EventHandler(this.btnCadVeiculo_Click);
             // 
             // toolStripSeparator2
             // 
@@ -247,8 +257,14 @@
             // manutençãoToolStripMenuItem
             // 
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
-            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.manutençãoToolStripMenuItem.Text = "Manutenção";
+            // 
+            // viagenToolStripMenuItem
+            // 
+            this.viagenToolStripMenuItem.Name = "viagenToolStripMenuItem";
+            this.viagenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.viagenToolStripMenuItem.Text = "Viagem";
             // 
             // toolStripSeparator3
             // 
@@ -359,12 +375,6 @@
             this.TimerUpdateDate.Enabled = true;
             this.TimerUpdateDate.Tick += new System.EventHandler(this.TimerUpdateDate_Tick);
             // 
-            // viagenToolStripMenuItem
-            // 
-            this.viagenToolStripMenuItem.Name = "viagenToolStripMenuItem";
-            this.viagenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.viagenToolStripMenuItem.Text = "Viagem";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -412,7 +422,7 @@
         private System.Windows.Forms.ToolStripMenuItem geralVeículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnCadMarca;
         private System.Windows.Forms.ToolStripMenuItem btnCadModelo;
-        private System.Windows.Forms.ToolStripMenuItem veículoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnCadVeiculo2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem peçasToolStripMenuItem;
@@ -431,6 +441,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusBarUser;
         private System.Windows.Forms.ToolStripStatusLabel statusBarHours;
         private System.Windows.Forms.ToolStripMenuItem viagenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnCadVeiculo;
     }
 }
 

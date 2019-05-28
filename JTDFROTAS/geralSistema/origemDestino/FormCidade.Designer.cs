@@ -67,6 +67,7 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGravar
             // 
@@ -79,6 +80,7 @@
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // chkAtivo
             // 
@@ -108,6 +110,7 @@
             this.txtCodEstado.Name = "txtCodEstado";
             this.txtCodEstado.Size = new System.Drawing.Size(68, 24);
             this.txtCodEstado.TabIndex = 19;
+            this.txtCodEstado.TextChanged += new System.EventHandler(this.txtCodEstado_TextChanged);
             // 
             // label2
             // 

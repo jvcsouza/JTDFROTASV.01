@@ -11,17 +11,20 @@ namespace JTDFROTAS.Classes
     {
         private String _nome;
         private int _codUf, _id;
+        private bool _ativo;
 
-        public Cidade(int id, String nome, int codUf)
+        public Cidade(int id, String nome, int codUf, bool ativo)
         {
             Id = id;
             Nome = nome;
             CodUf = codUf;
+            Ativo = ativo;
         }
 
         public string Nome { get => _nome; set => _nome = value; }
         public int CodUf { get => _codUf; set => _codUf = value; }
         public int Id { get => _id; set => _id = value; }
+        public bool Ativo { get => _ativo; set => _ativo = value; }
 
         public bool Atualizar()
         {
@@ -40,7 +43,7 @@ namespace JTDFROTAS.Classes
 
         public static DataTable Listar(bool ativo)
         {
-            Conexao.Query = @"SELECT c.ID, u.ID as CODESTADO, c.NOME, u.NOME, u.UF
+            Conexao.Query = @"SELECT c.ID, u.ID as CODESTADO, c.NOME, u.NOME AS ESTADO, u.UF, c.ATIVO
                             FROM UF u
                             INNER JOIN CIDADE c
                             ON u.ID = c.CODUF
@@ -49,7 +52,7 @@ namespace JTDFROTAS.Classes
         }
         public static DataTable Listar()
         {
-            Conexao.Query = @"SELECT c.ID, u.ID as CODESTADO, c.NOME, u.NOME, u.UF
+            Conexao.Query = @"SELECT c.ID, u.ID as CODESTADO, c.NOME, u.NOME AS ESTADO, u.UF, c.ATIVO
                             FROM UF u
                             INNER JOIN CIDADE c
                             ON u.ID = c.CODUF";

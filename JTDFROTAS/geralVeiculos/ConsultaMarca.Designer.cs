@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaMarca));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.rdbNao = new System.Windows.Forms.RadioButton();
             this.rdbSim = new System.Windows.Forms.RadioButton();
+            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.dgvMarca = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnSelecionar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
@@ -61,6 +61,22 @@
             this.groupBox1.Size = new System.Drawing.Size(580, 78);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnEditar.Image = global::JTDFROTAS.Properties.Resources.iconEdit;
+            this.btnEditar.Location = new System.Drawing.Point(265, 13);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(77, 57);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // groupBox2
             // 
@@ -109,6 +125,50 @@
             this.rdbSim.UseVisualStyleBackColor = true;
             this.rdbSim.CheckedChanged += new System.EventHandler(this.rdbSim_CheckedChanged);
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Enabled = false;
+            this.btnSelecionar.Image = global::JTDFROTAS.Properties.Resources.iconSelectHand;
+            this.btnSelecionar.Location = new System.Drawing.Point(7, 13);
+            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(80, 57);
+            this.btnSelecionar.TabIndex = 3;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconDelete;
+            this.btnCancelar.Location = new System.Drawing.Point(180, 13);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(77, 57);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Excluir";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::JTDFROTAS.Properties.Resources.iconNew;
+            this.btnNovo.Location = new System.Drawing.Point(95, 13);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(77, 57);
+            this.btnNovo.TabIndex = 1;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
             // dgvMarca
             // 
             this.dgvMarca.AllowUserToAddRows = false;
@@ -156,64 +216,6 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnEditar.Image = global::JTDFROTAS.Properties.Resources.iconEdit;
-            this.btnEditar.Location = new System.Drawing.Point(265, 13);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(77, 57);
-            this.btnEditar.TabIndex = 8;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Visible = false;
-            // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.Enabled = false;
-            this.btnSelecionar.Image = global::JTDFROTAS.Properties.Resources.iconSelectHand;
-            this.btnSelecionar.Location = new System.Drawing.Point(7, 13);
-            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(80, 57);
-            this.btnSelecionar.TabIndex = 3;
-            this.btnSelecionar.Text = "Selecionar";
-            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconDelete;
-            this.btnCancelar.Location = new System.Drawing.Point(180, 13);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(77, 57);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Excluir";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Image = global::JTDFROTAS.Properties.Resources.iconNew;
-            this.btnNovo.Location = new System.Drawing.Point(95, 13);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(77, 57);
-            this.btnNovo.TabIndex = 1;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // ConsultaMarca
             // 

@@ -88,7 +88,8 @@ namespace JTDFROTAS.geralSistema.origemDestino
             int id = (int)dgvUF.CurrentRow.Cells[0].Value;
             String nome = dgvUF.CurrentRow.Cells[1].Value.ToString();
             String sigla = dgvUF.CurrentRow.Cells[2].Value.ToString();
-            UF estado = new UF(id, nome, sigla);
+            bool ativo = (bool)dgvUF.CurrentRow.Cells[4].Value;
+            UF estado = new UF(id, nome, sigla, ativo);
             FormUF fUF = new FormUF(estado);
             fUF.MdiParent = Form1.container;
             fUF.Show();

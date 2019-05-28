@@ -36,6 +36,19 @@ namespace JTDFROTAS.geralVeiculos
             btnEditar.Visible = true;
         }
 
+        private void editarCelula()
+        {
+            if (childrenAberto("Atualiza Marca"))
+                return;
+            int id = (int)dgvMarca.CurrentRow.Cells[0].Value;
+            String nome = dgvMarca.CurrentRow.Cells[1].Value.ToString();
+            bool ativo = (bool)dgvMarca.CurrentRow.Cells[2].Value;
+            Marca m = new Marca(id, nome, ativo);
+            FormMarca fm = new FormMarca(m);
+            fm.MdiParent = Form1.container;
+            fm.Show();
+        }
+
         private void dgvMarca_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (selecionar)
@@ -43,18 +56,7 @@ namespace JTDFROTAS.geralVeiculos
                 campo.Text = dgvMarca.CurrentRow.Cells[0].Value.ToString();
                 Dispose();
             }
-            else
-            {
-                if (childrenAberto("Atualiza Marca"))
-                    return;
-                int id = (int) dgvMarca.CurrentRow.Cells[0].Value;
-                String nome = dgvMarca.CurrentRow.Cells[1].Value.ToString();
-                bool ativo = (bool) dgvMarca.CurrentRow.Cells[2].Value;
-                Marca m = new Marca(id, nome, ativo);
-                FormMarca fm = new FormMarca(m);
-                fm.MdiParent = Form1.container;
-                fm.Show();
-            }
+            else editarCelula();
 
         }
 
@@ -106,6 +108,16 @@ namespace JTDFROTAS.geralVeiculos
             FormMarca consMarca = new FormMarca();
             consMarca.MdiParent = Form1.container;
             consMarca.Show();
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            dgvMarca_CellDoubleClick(null, null);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            editarCelula();
         }
     }
 }

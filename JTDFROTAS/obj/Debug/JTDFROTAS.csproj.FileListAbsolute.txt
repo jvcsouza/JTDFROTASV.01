@@ -48,3 +48,6 @@ C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debu
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\stdole.dll
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.ConsultaVeiculo.resources
+C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.FormVeiculo.resources

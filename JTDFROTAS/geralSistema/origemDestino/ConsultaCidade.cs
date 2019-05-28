@@ -40,8 +40,10 @@ namespace JTDFROTAS.geralSistema.origemDestino
 
         private void dgvCidade_DataSourceChanged(object sender, EventArgs e)
         {
-            if (dgvCidade.Rows.Count > 0)
-                dgvCidade.Columns["CODESTADO"].Visible = false;
+            if (dgvCidade.Rows.Count <= 0)
+                return;
+            dgvCidade.Columns["CODESTADO"].Visible = false;
+            dgvCidade.Columns["ATIVO"].Visible = false;
         }
 
         private void rdbNao_CheckedChanged(object sender, EventArgs e)
@@ -83,15 +85,15 @@ namespace JTDFROTAS.geralSistema.origemDestino
             int id = (int) dgvCidade.CurrentRow.Cells[0].Value;
             String nome = dgvCidade.CurrentRow.Cells[2].Value.ToString();
             int codEstado = (int) dgvCidade.CurrentRow.Cells[1].Value;
-            Cidade c = new Cidade(id, nome, codEstado);
+            bool ativo = (bool) dgvCidade.CurrentRow.Cells[5].Value;
+            Cidade c = new Cidade(id, nome, codEstado, ativo);
             FormCidade fCidade = new FormCidade(c);
             fCidade.MdiParent = Form1.container;
             fCidade.Show();
         }
         private void dgvCidade_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!selecionar)
-                editarCelular();
+            if (!selecionar) editarCelular();
             else
             {
                 campo.Text = dgvCidade.CurrentRow.Cells[0].Value.ToString();
