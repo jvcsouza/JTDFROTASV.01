@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUF));
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSigla = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
+            this.txtSigla = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,15 +62,6 @@
             this.txtNome.Size = new System.Drawing.Size(252, 24);
             this.txtNome.TabIndex = 2;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(22, 110);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(75, 24);
-            this.txtId.TabIndex = 10;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // label2
             // 
@@ -102,24 +93,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // txtSigla
-            // 
-            this.txtSigla.Location = new System.Drawing.Point(103, 110);
-            this.txtSigla.Name = "txtSigla";
-            this.txtSigla.Size = new System.Drawing.Size(96, 24);
-            this.txtSigla.TabIndex = 1;
-            this.txtSigla.TextChanged += new System.EventHandler(this.txtSigla_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Sigla:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -146,17 +119,46 @@
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGravar.UseVisualStyleBackColor = true;
             // 
+            // txtSigla
+            // 
+            this.txtSigla.Location = new System.Drawing.Point(103, 110);
+            this.txtSigla.Name = "txtSigla";
+            this.txtSigla.Size = new System.Drawing.Size(96, 24);
+            this.txtSigla.TabIndex = 1;
+            this.txtSigla.TextChanged += new System.EventHandler(this.txtSigla_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(100, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Sigla:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtId.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(22, 110);
+            this.txtId.Name = "txtId";
+            this.txtId.Padding = new System.Windows.Forms.Padding(3);
+            this.txtId.Size = new System.Drawing.Size(75, 24);
+            this.txtId.TabIndex = 20;
+            // 
             // FormUF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(309, 204);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtSigla);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -181,7 +183,6 @@
 
         private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -189,5 +190,6 @@
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.TextBox txtSigla;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtId;
     }
 }

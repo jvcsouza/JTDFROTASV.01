@@ -15,7 +15,7 @@ namespace JTDFROTAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormViagem());
+            Application.Run(new Form1());
         }
     }
 }

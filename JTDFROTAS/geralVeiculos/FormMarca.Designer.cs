@@ -34,9 +34,9 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.txtId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,14 +94,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome:";
             // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(28, 121);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(242, 24);
-            this.txtId.TabIndex = 4;
-            // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(28, 171);
@@ -121,6 +113,17 @@
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtId.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(28, 118);
+            this.txtId.Name = "txtId";
+            this.txtId.Padding = new System.Windows.Forms.Padding(3);
+            this.txtId.Size = new System.Drawing.Size(242, 26);
+            this.txtId.TabIndex = 7;
+            // 
             // FormMarca
             // 
             this.AcceptButton = this.btnGravar;
@@ -129,9 +132,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(306, 217);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -158,8 +161,8 @@
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.CheckBox chkAtivo;
+        private System.Windows.Forms.Label txtId;
     }
 }

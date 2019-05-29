@@ -35,5 +35,12 @@ namespace JTDFROTAS.geralVeiculos
         {
             Dispose();
         }
+
+        private void btnBuscaModelo_Click(object sender, EventArgs e)
+        {
+            ConsultaMarca consMarca = new ConsultaMarca(txtCodModelo);
+            consMarca.MdiParent = Form1.container;
+            consMarca.Show();
+        }
     }
 }

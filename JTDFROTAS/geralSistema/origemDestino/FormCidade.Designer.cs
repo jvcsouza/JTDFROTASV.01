@@ -39,9 +39,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscaEstado = new System.Windows.Forms.Button();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,30 +152,6 @@
             this.btnBuscaEstado.UseVisualStyleBackColor = false;
             this.btnBuscaEstado.Click += new System.EventHandler(this.btnBuscaEstado_Click);
             // 
-            // txtEstado
-            // 
-            this.txtEstado.BackColor = System.Drawing.Color.White;
-            this.txtEstado.ForeColor = System.Drawing.Color.Black;
-            this.txtEstado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtEstado.Location = new System.Drawing.Point(116, 185);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.ReadOnly = true;
-            this.txtEstado.Size = new System.Drawing.Size(204, 24);
-            this.txtEstado.TabIndex = 27;
-            this.txtEstado.TabStop = false;
-            // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.White;
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtId.Location = new System.Drawing.Point(17, 121);
-            this.txtId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(68, 24);
-            this.txtId.TabIndex = 26;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -185,12 +161,36 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "ID:";
             // 
+            // txtEstado
+            // 
+            this.txtEstado.BackColor = System.Drawing.Color.White;
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstado.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(116, 185);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Padding = new System.Windows.Forms.Padding(3);
+            this.txtEstado.Size = new System.Drawing.Size(204, 24);
+            this.txtEstado.TabIndex = 30;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtId.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(17, 112);
+            this.txtId.Name = "txtId";
+            this.txtId.Padding = new System.Windows.Forms.Padding(3);
+            this.txtId.Size = new System.Drawing.Size(83, 24);
+            this.txtId.TabIndex = 31;
+            // 
             // FormCidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(348, 294);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.btnBuscaEstado);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkAtivo);
@@ -199,8 +199,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -231,8 +229,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscaEstado;
-        private System.Windows.Forms.TextBox txtEstado;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtEstado;
+        private System.Windows.Forms.Label txtId;
     }
 }

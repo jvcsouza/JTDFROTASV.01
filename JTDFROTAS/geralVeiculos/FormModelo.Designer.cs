@@ -35,13 +35,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnBuscaMarca = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBuscaMarca = new System.Windows.Forms.Button();
+            this.txtMarca = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,48 +103,6 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.White;
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtId.Location = new System.Drawing.Point(22, 121);
-            this.txtId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(68, 24);
-            this.txtId.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 17);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "ID:";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.White;
-            this.txtMarca.ForeColor = System.Drawing.Color.Black;
-            this.txtMarca.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtMarca.Location = new System.Drawing.Point(121, 185);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.ReadOnly = true;
-            this.txtMarca.Size = new System.Drawing.Size(204, 24);
-            this.txtMarca.TabIndex = 16;
-            this.txtMarca.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Marca:";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -159,6 +117,36 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnGravar
+            // 
+            this.btnGravar.Image = global::JTDFROTAS.Properties.Resources.iconSave;
+            this.btnGravar.Location = new System.Drawing.Point(6, 17);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 57);
+            this.btnGravar.TabIndex = 3;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(25, 17);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "ID:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(118, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Marca:";
+            // 
             // btnBuscaMarca
             // 
             this.btnBuscaMarca.BackColor = System.Drawing.SystemColors.Control;
@@ -172,17 +160,27 @@
             this.btnBuscaMarca.UseVisualStyleBackColor = false;
             this.btnBuscaMarca.Click += new System.EventHandler(this.btnBuscaMarca_Click);
             // 
-            // btnGravar
+            // txtMarca
             // 
-            this.btnGravar.Image = global::JTDFROTAS.Properties.Resources.iconSave;
-            this.btnGravar.Location = new System.Drawing.Point(6, 17);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 57);
-            this.btnGravar.TabIndex = 3;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGravar.UseVisualStyleBackColor = true;
+            this.txtMarca.BackColor = System.Drawing.Color.White;
+            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMarca.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.Location = new System.Drawing.Point(121, 185);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Padding = new System.Windows.Forms.Padding(3);
+            this.txtMarca.Size = new System.Drawing.Size(204, 24);
+            this.txtMarca.TabIndex = 19;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.White;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtId.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(22, 121);
+            this.txtId.Name = "txtId";
+            this.txtId.Padding = new System.Windows.Forms.Padding(3);
+            this.txtId.Size = new System.Drawing.Size(83, 24);
+            this.txtId.TabIndex = 20;
             // 
             // FormModelo
             // 
@@ -190,10 +188,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(352, 292);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBuscaMarca);
-            this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkAtivo);
@@ -227,10 +225,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGravar;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Button btnBuscaMarca;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label txtMarca;
+        private System.Windows.Forms.Label txtId;
     }
 }

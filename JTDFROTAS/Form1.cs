@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using JTDFROTAS.Classes;
 using JTDFROTAS.Pessoa;
 using JTDFROTAS.geralSistema.origemDestino;
+using JTDFROTAS.Movimento;
 
 namespace JTDFROTAS
 {
@@ -105,6 +106,12 @@ namespace JTDFROTAS
             consVeiculo.MdiParent = this;
             consVeiculo.Show();
         }
-        
+
+        private void viagenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormViagem fViagem = new FormViagem();
+            fViagem.MdiParent = this;
+            fViagem.Show();
+        }
     }
 }

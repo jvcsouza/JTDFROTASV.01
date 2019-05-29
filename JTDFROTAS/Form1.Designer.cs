@@ -160,14 +160,14 @@
             // btnCadMarca
             // 
             this.btnCadMarca.Name = "btnCadMarca";
-            this.btnCadMarca.Size = new System.Drawing.Size(152, 22);
+            this.btnCadMarca.Size = new System.Drawing.Size(120, 22);
             this.btnCadMarca.Text = "Marca";
             this.btnCadMarca.Click += new System.EventHandler(this.btnCadMarca_Click);
             // 
             // btnCadModelo
             // 
             this.btnCadModelo.Name = "btnCadModelo";
-            this.btnCadModelo.Size = new System.Drawing.Size(152, 22);
+            this.btnCadModelo.Size = new System.Drawing.Size(120, 22);
             this.btnCadModelo.Text = "Modelo";
             this.btnCadModelo.Click += new System.EventHandler(this.btnCadModelo_Click);
             // 
@@ -176,13 +176,13 @@
             this.btnCadVeiculo2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCadVeiculo});
             this.btnCadVeiculo2.Name = "btnCadVeiculo2";
-            this.btnCadVeiculo2.Size = new System.Drawing.Size(152, 22);
+            this.btnCadVeiculo2.Size = new System.Drawing.Size(120, 22);
             this.btnCadVeiculo2.Text = "Veículo";
             // 
             // btnCadVeiculo
             // 
             this.btnCadVeiculo.Name = "btnCadVeiculo";
-            this.btnCadVeiculo.Size = new System.Drawing.Size(152, 22);
+            this.btnCadVeiculo.Size = new System.Drawing.Size(120, 22);
             this.btnCadVeiculo.Text = "Veiculo";
             this.btnCadVeiculo.Click += new System.EventHandler(this.btnCadVeiculo_Click);
             // 
@@ -257,14 +257,15 @@
             // manutençãoToolStripMenuItem
             // 
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
-            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.manutençãoToolStripMenuItem.Text = "Manutenção";
             // 
             // viagenToolStripMenuItem
             // 
             this.viagenToolStripMenuItem.Name = "viagenToolStripMenuItem";
-            this.viagenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.viagenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viagenToolStripMenuItem.Text = "Viagem";
+            this.viagenToolStripMenuItem.Click += new System.EventHandler(this.viagenToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 

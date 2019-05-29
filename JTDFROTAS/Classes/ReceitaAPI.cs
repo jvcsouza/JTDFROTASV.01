@@ -46,7 +46,7 @@ namespace JTDFROTAS.Classes
         public string Logradouro { get; set; }
 
         [JsonProperty("numero")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        //[JsonConverter(typeof(ParseStringConverter))]
         public long Numero { get; set; }
 
         [JsonProperty("cep")]
