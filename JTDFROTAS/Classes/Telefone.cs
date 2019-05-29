@@ -15,6 +15,9 @@ namespace JTDFROTAS.Classes
             
         }
 
+        public string Contato { get => Contato; set => Contato = value; }
+        public string Fone { get => fone; set => fone = value; }
+
         public bool Atualizar()
         {
             throw new NotImplementedException();

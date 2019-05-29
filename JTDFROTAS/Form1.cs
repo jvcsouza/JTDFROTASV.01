@@ -73,11 +73,11 @@ namespace JTDFROTAS
 
         private void btnCadFisica_Click(object sender, EventArgs e)
         {
-            if (childrenAberto("Consultar Pessoa"))
+            if (childrenAberto("Atualiza Pessoa Fisica"))
                 return;
-            FormPessoa fPessoa = new FormPessoa();
-            fPessoa.MdiParent = this;
-            fPessoa.Show();
+            FormFisica fPessoaFisica = new FormFisica();
+            fPessoaFisica.MdiParent = this;
+            fPessoaFisica.Show();
         }
 
         private void btnCadUF_Click(object sender, EventArgs e)

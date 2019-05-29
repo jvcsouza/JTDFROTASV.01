@@ -6,19 +6,46 @@ using System.Threading.Tasks;
 
 namespace JTDFROTAS.Classes
 {
-    class Fisica : Pessoa
+    public class Fisica : Pessoa
     {
+        private int id;
         private String cpf;
         private int codPessoa;
+        private int codCidade;
+        private String logradouro;
+        private String num;
+        private String nome;
 
-        public Fisica(String nome, String logradouro, String num, int codCidade, String cpf, int codPessoa)
+        public Fisica(String nome, String logradouro, String num, int codCidade, String cpf)
             : base(nome, logradouro, num, codCidade)
         {
-            codPessoa = Id;
-            this.cpf = cpf;
+            Cpf = cpf;
         }
+
+        public Fisica(int id, String nome, String logradouro, String num, int codCidade, String cpf, int codPessoa)
+            : base(id, nome, logradouro, num, codCidade)
+        {
+            codPessoa = id;
+            Cpf = cpf;
+        }
+
+        public Fisica(int id, int codP, String nome, String logradouro, String num, int codCidade, String cpf, int codPessoa)
+            : base(codP, nome, logradouro, num, codCidade)
+        {
+            IdFisica = id;
+            codPessoa = codP;
+            Cpf = cpf;
+        }
+
+        public string Cpf { get => cpf; set => cpf = value; }
+        public int CodCidade { get => codCidade; set => codCidade = value; }
+        public int IdFisica { get => id; set => id = value; }
+
         public override bool Registrar()
         {
+            base.Registrar();
+            codPessoa = Id;
+
             return true;
         }
     }

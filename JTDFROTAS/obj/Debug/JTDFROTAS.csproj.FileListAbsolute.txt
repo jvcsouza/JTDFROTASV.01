@@ -51,5 +51,4 @@ C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debu
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\bin\Debug\Newtonsoft.Json.dll
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.ConsultaVeiculo.resources
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.geralVeiculos.FormVeiculo.resources
-C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Pessoa.ConsultaFisica.resources
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Pessoa.FormFisica.resources

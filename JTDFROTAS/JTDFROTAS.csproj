@@ -169,12 +169,6 @@
     <Compile Include="geralVeiculos\FormVeiculo.Designer.cs">
       <DependentUpon>FormVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pessoa\ConsultaFisica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pessoa\ConsultaFisica.Designer.cs">
-      <DependentUpon>ConsultaFisica.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pessoa\ConsultaPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,9 +227,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="geralVeiculos\FormVeiculo.resx">
       <DependentUpon>FormVeiculo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pessoa\ConsultaFisica.resx">
-      <DependentUpon>ConsultaFisica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pessoa\ConsultaPessoa.resx">
       <DependentUpon>ConsultaPessoa.cs</DependentUpon>
