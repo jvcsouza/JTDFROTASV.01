@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using JTDFROTAS.Classes;
+using System.Collections.Generic;
 
 namespace JTDFROTAS.Pessoa
 {
@@ -31,11 +32,21 @@ namespace JTDFROTAS.Pessoa
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            List<Telefone> lista = new List<Telefone>();
+            for (int i = 0; i < lbxContatos.Items.Count; i++)
+            {
+                String contato = lbxContatos.Items[i].ToString();
+                i++;
+                String fone = lbxContatos.Items[i].ToString();
+                lista.Add(new Telefone(contato, fone));
+            }
             Fisica pFisica = new Fisica(txtNome.Text.Trim(),
                                         txtLogradouro.Text.Trim(),
                                         txtLogradouroN.Text.Trim(),
                                         Int32.Parse(txtCodCidade.Text.Trim()),
-                                        txtCpf.Text.Trim());
+                                        txtCpf.Text.Trim(),
+                                        lista);
+            pFisica.Registrar();
         }
     }
 }

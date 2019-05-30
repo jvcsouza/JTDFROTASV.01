@@ -8,7 +8,7 @@ namespace JTDFROTAS.Classes
         private int _codPessoa;
 
         public Motorista(String nome, String logradouro, String num, int codCidade, int codTipoCarteira) 
-            : base(nome, logradouro, num, codCidade)
+            : base(nome, logradouro, num, codCidade, new Telefone("",""))
         {
             _codTipoCarteira = codTipoCarteira;
             _codPessoa = Id;

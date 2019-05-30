@@ -14,7 +14,8 @@ namespace JTDFROTAS.Classes
         private List<Telefone> _contatos;
 
         public int Id { get; }
-        public String Nome {
+        public String Nome
+        {
             get
             {
                 return Nome.ToUpper();
@@ -32,17 +33,18 @@ namespace JTDFROTAS.Classes
             }
             set { }
         }
-        
+
         public string Logradouro { get => _logradouro; set => _logradouro = value; }
         public string Num { get => _num; set => _num = value; }
         internal List<Telefone> Contatos { get => _contatos; set => _contatos = value; }
 
-        public Pessoa(String nome, String logradouro, String num, int codcidade)
+        public Pessoa(String nome, String logradouro, String num, int codcidade, object fones)
         {
             Nome = nome;
             Logradouro = logradouro;
             Num = num;
             _codcidade = codcidade;
+            Contatos = (List<Telefone>) fones;
         }
 
         public Pessoa(int id, String nome, String logradouro, String num, int codcidade)
@@ -56,6 +58,15 @@ namespace JTDFROTAS.Classes
 
         public virtual bool Registrar()
         {
+            Conexao.Query = @"INSERT INTO PESSOA";
+            Conexao.ExecQuery();
+
+            if (Contatos.Count > 0)
+                foreach (Telefone fone in Contatos)
+                {
+                    fone.Registrar(Id);
+                }
+
             //Registrar no banco
             //seta o id
             return true;

@@ -16,8 +16,8 @@ namespace JTDFROTAS.Classes
         private String num;
         private String nome;
 
-        public Fisica(String nome, String logradouro, String num, int codCidade, String cpf)
-            : base(nome, logradouro, num, codCidade)
+        public Fisica(String nome, String logradouro, String num, int codCidade, String cpf, object fones)
+            : base(nome, logradouro, num, codCidade, fones)
         {
             Cpf = cpf;
         }

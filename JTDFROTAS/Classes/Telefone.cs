@@ -10,6 +10,14 @@ namespace JTDFROTAS.Classes
         {
 
         }
+        public Telefone(String fone)
+        {
+
+        }
+        public Telefone(String contato, String fone)
+        {
+
+        }
         public Telefone(String contato, String fone, int codPessoa)
         {
             
@@ -31,6 +39,11 @@ namespace JTDFROTAS.Classes
         public bool Deletar()
         {
             throw new NotImplementedException();
+        }
+
+        public bool Registrar(int codPessoa)
+        {
+            return true;
         }
 
         public bool Registrar()

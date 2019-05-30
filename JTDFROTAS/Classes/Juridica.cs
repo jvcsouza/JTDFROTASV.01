@@ -24,7 +24,7 @@ namespace JTDFROTAS.Classes
         }
 
         public Juridica(String nome, String logradouro, String num, int codCidade, String cnpj, int codPessoa)
-            : base(nome, logradouro, num, codCidade)
+            : base(nome, logradouro, num, codCidade, new Telefone("",""))
         {
             codPessoa = Id;
             Cnpj = cnpj;

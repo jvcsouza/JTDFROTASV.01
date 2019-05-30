@@ -76,7 +76,8 @@
     <Compile Include="Classes\BoxAlert.cs" />
     <Compile Include="Classes\Cidade.cs" />
     <Compile Include="Classes\Conexao.cs" />
-    <Compile Include="Classes\MapsAPI.cs" />
+    <Compile Include="Classes\APIs.cs" />
+    <Compile Include="Classes\APIsClasses\MapsAPI.cs" />
     <Compile Include="Classes\ICRUD.cs" />
     <Compile Include="Classes\Juridica.cs" />
     <Compile Include="Classes\Fisica.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Classes\Motorista.cs" />
     <Compile Include="Classes\Peca.cs" />
     <Compile Include="Classes\Pessoa.cs" />
-    <Compile Include="Classes\ReceitaAPI.cs" />
+    <Compile Include="Classes\APIsClasses\ReceitaAPI.cs" />
     <Compile Include="Classes\Tela.cs" />
     <Compile Include="Classes\Telefone.cs" />
     <Compile Include="Classes\UF.cs" />
