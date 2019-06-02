@@ -34,12 +34,13 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtModelo = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscaCliente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,10 +50,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chkDisponivel = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtDataUltimaMan = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtModelo = new System.Windows.Forms.Label();
+            this.txtCustoMedio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -103,16 +105,17 @@
             this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtModelo);
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.txtPlaca);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cboTipo);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnBuscaCliente);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.txtCodCliente);
             this.groupBox2.Controls.Add(this.label3);
@@ -128,15 +131,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Geral";
             // 
-            // maskedTextBox1
+            // txtModelo
             // 
-            this.maskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.maskedTextBox1.Location = new System.Drawing.Point(227, 51);
-            this.maskedTextBox1.Mask = "AAA-AAAA";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(102, 24);
-            this.maskedTextBox1.TabIndex = 34;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtModelo.BackColor = System.Drawing.Color.White;
+            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtModelo.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Location = new System.Drawing.Point(126, 109);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Padding = new System.Windows.Forms.Padding(3);
+            this.txtModelo.Size = new System.Drawing.Size(204, 24);
+            this.txtModelo.TabIndex = 35;
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtPlaca.Location = new System.Drawing.Point(227, 51);
+            this.txtPlaca.Mask = "AAA-AAAA";
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(102, 24);
+            this.txtPlaca.TabIndex = 34;
+            this.txtPlaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -149,8 +163,12 @@
             // 
             // cboTipo
             // 
+            this.cboTipo.DisplayMember = "Carro";
             this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.FormattingEnabled = true;
+            this.cboTipo.Items.AddRange(new object[] {
+            "Carro",
+            "Caminhão"});
             this.cboTipo.Location = new System.Drawing.Point(25, 50);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(121, 25);
@@ -174,17 +192,17 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Cliente:";
             // 
-            // button1
+            // btnBuscaCliente
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.button1.Location = new System.Drawing.Point(81, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 24);
-            this.button1.TabIndex = 27;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscaCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscaCliente.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.btnBuscaCliente.Location = new System.Drawing.Point(81, 158);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.Size = new System.Drawing.Size(29, 24);
+            this.btnBuscaCliente.TabIndex = 27;
+            this.btnBuscaCliente.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -198,7 +216,6 @@
             this.textBox1.Size = new System.Drawing.Size(204, 24);
             this.textBox1.TabIndex = 26;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "EM BRANCO (PRÓPRIO)";
             // 
             // txtCodCliente
             // 
@@ -262,6 +279,7 @@
             this.chkDisponivel.AutoSize = true;
             this.chkDisponivel.Checked = true;
             this.chkDisponivel.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkDisponivel.Enabled = false;
             this.chkDisponivel.Location = new System.Drawing.Point(243, 23);
             this.chkDisponivel.Name = "chkDisponivel";
             this.chkDisponivel.Size = new System.Drawing.Size(86, 21);
@@ -271,15 +289,37 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtDataUltimaMan);
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtCustoMedio);
             this.groupBox3.Location = new System.Drawing.Point(8, 298);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(363, 62);
+            this.groupBox3.Size = new System.Drawing.Size(363, 85);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manutenção";
+            // 
+            // txtDataUltimaMan
+            // 
+            this.txtDataUltimaMan.BackColor = System.Drawing.Color.White;
+            this.txtDataUltimaMan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDataUltimaMan.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataUltimaMan.Location = new System.Drawing.Point(215, 50);
+            this.txtDataUltimaMan.Name = "txtDataUltimaMan";
+            this.txtDataUltimaMan.Padding = new System.Windows.Forms.Padding(3);
+            this.txtDataUltimaMan.Size = new System.Drawing.Size(115, 24);
+            this.txtDataUltimaMan.TabIndex = 36;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(28, 51);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(121, 17);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "Ultima Manutenção:";
             // 
             // label9
             // 
@@ -300,29 +340,18 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Custo Médio p/ KM:";
             // 
-            // textBox2
+            // txtCustoMedio
             // 
-            this.textBox2.Location = new System.Drawing.Point(215, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 24);
-            this.textBox2.TabIndex = 0;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.BackColor = System.Drawing.Color.White;
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtModelo.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.Location = new System.Drawing.Point(126, 109);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Padding = new System.Windows.Forms.Padding(3);
-            this.txtModelo.Size = new System.Drawing.Size(204, 24);
-            this.txtModelo.TabIndex = 35;
+            this.txtCustoMedio.Location = new System.Drawing.Point(215, 23);
+            this.txtCustoMedio.Name = "txtCustoMedio";
+            this.txtCustoMedio.Size = new System.Drawing.Size(115, 24);
+            this.txtCustoMedio.TabIndex = 0;
             // 
             // FormVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 369);
+            this.ClientSize = new System.Drawing.Size(378, 387);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -336,6 +365,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualiza Veiculo";
+            this.Load += new System.EventHandler(this.FormVeiculo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -358,7 +388,7 @@
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscaCliente;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtCodCliente;
         private System.Windows.Forms.Label label3;
@@ -366,11 +396,13 @@
         private System.Windows.Forms.Button btnBuscaModelo;
         private System.Windows.Forms.TextBox txtCodModelo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtPlaca;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCustoMedio;
         private System.Windows.Forms.Label txtModelo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label txtDataUltimaMan;
     }
 }

@@ -38,9 +38,37 @@ namespace JTDFROTAS.geralVeiculos
 
         private void btnBuscaModelo_Click(object sender, EventArgs e)
         {
-            ConsultaMarca consMarca = new ConsultaMarca(txtCodModelo);
-            consMarca.MdiParent = Form1.container;
-            consMarca.Show();
+            ConsultaModelo consModelo = new ConsultaModelo(txtCodModelo);
+            consModelo.MdiParent = Form1.container;
+            consModelo.Show();
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtPlaca.Text.Trim())
+                || String.IsNullOrWhiteSpace(txtModelo.Text.Trim())
+                    || String.IsNullOrWhiteSpace(txtCodCliente.Text.Trim())
+                        || String.IsNullOrWhiteSpace(txtCustoMedio.Text.Trim()))
+            {
+                MessageBox.Show(this, "Todos os campos precisam ser Preenchidos!", "Problemas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            String placa = txtPlaca.Text.Trim();
+            int modelo = Int32.Parse(txtModelo.Text.Trim());
+            int cliente = Int32.Parse(txtCodCliente.Text.Trim());
+            double custoMedio = Double.Parse(txtCustoMedio.Text.Trim());
+            String tipoVeiculo = cboTipo.SelectedText;
+            Veiculo v = new Veiculo(placa,
+                                    tipoVeiculo,
+                                    modelo,
+                                    cliente,
+                                    custoMedio);
+            v.Registrar();
+        }
+
+        private void FormVeiculo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

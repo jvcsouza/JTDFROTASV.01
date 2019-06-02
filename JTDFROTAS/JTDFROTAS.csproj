@@ -51,6 +51,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -182,6 +184,12 @@
     <Compile Include="Pessoa\FormFisica.Designer.cs">
       <DependentUpon>FormFisica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pessoa\FormJuridica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pessoa\FormJuridica.Designer.cs">
+      <DependentUpon>FormJuridica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pessoa\FormPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pessoa\FormFisica.resx">
       <DependentUpon>FormFisica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pessoa\FormJuridica.resx">
+      <DependentUpon>FormJuridica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pessoa\FormPessoa.resx">
       <DependentUpon>FormPessoa.cs</DependentUpon>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace JTDFROTAS.Classes
 {
@@ -19,6 +20,7 @@ namespace JTDFROTAS.Classes
         public static ReceitaApi consultaCNPJ(String cnpj)
         {
             coders();
+            cnpj = Regex.Replace(cnpj, "[^0-9]", "");
             String json = WCliente.DownloadString($"https://www.receitaws.com.br/v1/cnpj/{cnpj}");
             return JsonConvert.DeserializeObject<ReceitaApi>(json);
         }

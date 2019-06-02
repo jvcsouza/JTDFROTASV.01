@@ -75,7 +75,7 @@ namespace JTDFROTAS
         {
             if (childrenAberto("Atualiza Pessoa Fisica"))
                 return;
-            FormFisica fPessoaFisica = new FormFisica();
+            FormJuridica fPessoaFisica = new FormJuridica();
             fPessoaFisica.MdiParent = this;
             fPessoaFisica.Show();
         }
@@ -112,6 +112,24 @@ namespace JTDFROTAS
             FormViagem fViagem = new FormViagem();
             fViagem.MdiParent = this;
             fViagem.Show();
+        }
+
+        private void btnCadJuridica_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Atualiza Pessoa Juridica"))
+                return;
+            FormJuridica fPessoaJuridica = new FormJuridica();
+            fPessoaJuridica.MdiParent = this;
+            fPessoaJuridica.Show();
+        }
+
+        private void btnListPessoa_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Pessoa"))
+                return;
+            ConsultaPessoa consPessoa = new ConsultaPessoa();
+            consPessoa.MdiParent = this;
+            consPessoa.Show();
         }
     }
 }

@@ -36,17 +36,18 @@
             this.rdbNao = new System.Windows.Forms.RadioButton();
             this.rdbSim = new System.Windows.Forms.RadioButton();
             this.btnSelecionar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPessoa = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.rdbJuridica = new System.Windows.Forms.RadioButton();
+            this.rdbFisica = new System.Windows.Forms.RadioButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtPesquisaNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPessoa)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnSelecionar);
-            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnExcluir);
             this.groupBox1.Controls.Add(this.btnNovo);
             this.groupBox1.Location = new System.Drawing.Point(4, 1);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -101,6 +102,7 @@
             this.rdbTodos.TabIndex = 2;
             this.rdbTodos.Text = "Todos";
             this.rdbTodos.UseVisualStyleBackColor = true;
+            this.rdbTodos.CheckedChanged += new System.EventHandler(this.rdbTodos_CheckedChanged);
             // 
             // rdbNao
             // 
@@ -111,6 +113,7 @@
             this.rdbNao.TabIndex = 1;
             this.rdbNao.Text = "Não";
             this.rdbNao.UseVisualStyleBackColor = true;
+            this.rdbNao.CheckedChanged += new System.EventHandler(this.rdbNao_CheckedChanged);
             // 
             // rdbSim
             // 
@@ -123,6 +126,7 @@
             this.rdbSim.TabStop = true;
             this.rdbSim.Text = "Sim";
             this.rdbSim.UseVisualStyleBackColor = true;
+            this.rdbSim.CheckedChanged += new System.EventHandler(this.rdbSim_CheckedChanged);
             // 
             // btnSelecionar
             // 
@@ -138,22 +142,24 @@
             this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSelecionar.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnExcluir
             // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconDelete;
-            this.btnCancelar.Location = new System.Drawing.Point(180, 13);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(77, 57);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Excluir";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnExcluir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExcluir.Image = global::JTDFROTAS.Properties.Resources.iconDelete;
+            this.btnExcluir.Location = new System.Drawing.Point(180, 13);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(77, 57);
+            this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnNovo
             // 
+            this.btnNovo.Enabled = false;
             this.btnNovo.Image = global::JTDFROTAS.Properties.Resources.iconNew;
             this.btnNovo.Location = new System.Drawing.Point(95, 13);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
@@ -165,81 +171,104 @@
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNovo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPessoa
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 166);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(573, 220);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvPessoa.AllowUserToAddRows = false;
+            this.dgvPessoa.AllowUserToDeleteRows = false;
+            this.dgvPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvPessoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPessoa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPessoa.Location = new System.Drawing.Point(11, 122);
+            this.dgvPessoa.MultiSelect = false;
+            this.dgvPessoa.Name = "dgvPessoa";
+            this.dgvPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPessoa.Size = new System.Drawing.Size(573, 264);
+            this.dgvPessoa.TabIndex = 4;
+            this.dgvPessoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPessoa_CellContentClick);
+            this.dgvPessoa.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPessoa_CellContentDoubleClick);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox4);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.rdbJuridica);
+            this.groupBox3.Controls.Add(this.rdbFisica);
             this.groupBox3.Location = new System.Drawing.Point(390, 78);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(183, 82);
+            this.groupBox3.Size = new System.Drawing.Size(183, 38);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tipo";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // checkBox1
+            // rdbJuridica
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 21);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Fisíca";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.rdbJuridica.AutoSize = true;
+            this.rdbJuridica.Checked = true;
+            this.rdbJuridica.Location = new System.Drawing.Point(108, 11);
+            this.rdbJuridica.Name = "rdbJuridica";
+            this.rdbJuridica.Size = new System.Drawing.Size(69, 21);
+            this.rdbJuridica.TabIndex = 3;
+            this.rdbJuridica.TabStop = true;
+            this.rdbJuridica.Text = "Juridica";
+            this.rdbJuridica.UseVisualStyleBackColor = true;
+            this.rdbJuridica.CheckedChanged += new System.EventHandler(this.rdbJuridica_CheckedChanged);
             // 
-            // checkBox2
+            // rdbFisica
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(107, 23);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(70, 21);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Jurídica";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.rdbFisica.AutoSize = true;
+            this.rdbFisica.Location = new System.Drawing.Point(44, 11);
+            this.rdbFisica.Name = "rdbFisica";
+            this.rdbFisica.Size = new System.Drawing.Size(58, 21);
+            this.rdbFisica.TabIndex = 2;
+            this.rdbFisica.Text = "Fisica";
+            this.rdbFisica.UseVisualStyleBackColor = true;
+            this.rdbFisica.CheckedChanged += new System.EventHandler(this.rdbFisica_CheckedChanged);
             // 
-            // checkBox3
+            // btnBuscar
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(107, 50);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(61, 21);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Todos";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.btnBuscar.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(283, 86);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnBuscar.Size = new System.Drawing.Size(101, 26);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // txtPesquisaNome
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(16, 50);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(81, 21);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.Text = "Motorista";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.txtPesquisaNome.Location = new System.Drawing.Point(63, 88);
+            this.txtPesquisaNome.Name = "txtPesquisaNome";
+            this.txtPesquisaNome.Size = new System.Drawing.Size(214, 24);
+            this.txtPesquisaNome.TabIndex = 13;
+            this.txtPesquisaNome.TextChanged += new System.EventHandler(this.txtPesquisaNome_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Nome:";
             // 
             // ConsultaPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 393);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtPesquisaNome);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPessoa);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ConsultaPessoa";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -248,10 +277,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPessoa)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -264,13 +294,14 @@
         private System.Windows.Forms.RadioButton rdbNao;
         private System.Windows.Forms.RadioButton rdbSim;
         private System.Windows.Forms.Button btnSelecionar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPessoa;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.RadioButton rdbJuridica;
+        private System.Windows.Forms.RadioButton rdbFisica;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtPesquisaNome;
+        private System.Windows.Forms.Label label1;
     }
 }

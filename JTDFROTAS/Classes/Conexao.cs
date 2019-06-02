@@ -48,12 +48,19 @@ namespace JTDFROTAS.Classes
 
         public static SqlDataReader ExecReader()
         {
-            SqlCommand comando = new SqlCommand();
-            comando.CommandText = Query;
-            comando.Connection = Conn;
+            SqlDataReader reader = null;
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                comando.CommandText = Query;
+                comando.Connection = Conn;
 
-            SqlDataReader reader = comando.ExecuteReader();
-
+                reader = comando.ExecuteReader();
+               
+            }catch(Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(Form1.container, err.Message, $"ERROR {err.HResult}", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
             return reader;
         }
 

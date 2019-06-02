@@ -47,7 +47,7 @@
             this.peçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCadFisica = new System.Windows.Forms.ToolStripMenuItem();
-            this.juridicaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCadJuridica = new System.Windows.Forms.ToolStripMenuItem();
             this.motoristaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -66,6 +66,7 @@
             this.statusBarHours = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusBarUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.TimerUpdateDate = new System.Windows.Forms.Timer(this.components);
+            this.btnListPessoa = new System.Windows.Forms.ToolStripMenuItem();
             this.Bar.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -209,8 +210,9 @@
             // 
             this.pessoaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCadFisica,
-            this.juridicaToolStripMenuItem1,
-            this.motoristaToolStripMenuItem});
+            this.btnCadJuridica,
+            this.motoristaToolStripMenuItem,
+            this.btnListPessoa});
             this.pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
             this.pessoaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.pessoaToolStripMenuItem.Text = "Pessoa";
@@ -218,20 +220,21 @@
             // btnCadFisica
             // 
             this.btnCadFisica.Name = "btnCadFisica";
-            this.btnCadFisica.Size = new System.Drawing.Size(135, 22);
+            this.btnCadFisica.Size = new System.Drawing.Size(152, 22);
             this.btnCadFisica.Text = "Fisica";
             this.btnCadFisica.Click += new System.EventHandler(this.btnCadFisica_Click);
             // 
-            // juridicaToolStripMenuItem1
+            // btnCadJuridica
             // 
-            this.juridicaToolStripMenuItem1.Name = "juridicaToolStripMenuItem1";
-            this.juridicaToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
-            this.juridicaToolStripMenuItem1.Text = "Juridica";
+            this.btnCadJuridica.Name = "btnCadJuridica";
+            this.btnCadJuridica.Size = new System.Drawing.Size(152, 22);
+            this.btnCadJuridica.Text = "Juridica";
+            this.btnCadJuridica.Click += new System.EventHandler(this.btnCadJuridica_Click);
             // 
             // motoristaToolStripMenuItem
             // 
             this.motoristaToolStripMenuItem.Name = "motoristaToolStripMenuItem";
-            this.motoristaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.motoristaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.motoristaToolStripMenuItem.Text = "Motorista";
             // 
             // toolStripSeparator1
@@ -257,13 +260,13 @@
             // manutençãoToolStripMenuItem
             // 
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
-            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.manutençãoToolStripMenuItem.Text = "Manutenção";
             // 
             // viagenToolStripMenuItem
             // 
             this.viagenToolStripMenuItem.Name = "viagenToolStripMenuItem";
-            this.viagenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viagenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.viagenToolStripMenuItem.Text = "Viagem";
             this.viagenToolStripMenuItem.Click += new System.EventHandler(this.viagenToolStripMenuItem_Click);
             // 
@@ -376,6 +379,13 @@
             this.TimerUpdateDate.Enabled = true;
             this.TimerUpdateDate.Tick += new System.EventHandler(this.TimerUpdateDate_Tick);
             // 
+            // btnListPessoa
+            // 
+            this.btnListPessoa.Name = "btnListPessoa";
+            this.btnListPessoa.Size = new System.Drawing.Size(152, 22);
+            this.btnListPessoa.Text = "Pessoa";
+            this.btnListPessoa.Click += new System.EventHandler(this.btnListPessoa_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -414,7 +424,7 @@
         private System.Windows.Forms.ToolStripMenuItem geralSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pessoaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnCadFisica;
-        private System.Windows.Forms.ToolStripMenuItem juridicaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem btnCadJuridica;
         private System.Windows.Forms.ToolStripMenuItem motoristaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem origemDestinoToolStripMenuItem;
@@ -443,6 +453,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusBarHours;
         private System.Windows.Forms.ToolStripMenuItem viagenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnCadVeiculo;
+        private System.Windows.Forms.ToolStripMenuItem btnListPessoa;
     }
 }
 

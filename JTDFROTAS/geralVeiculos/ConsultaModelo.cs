@@ -9,6 +9,14 @@ namespace JTDFROTAS.geralVeiculos
         private TextBox campo;
         private bool selecionar = false;
 
+        public bool Selecionar { get => selecionar;
+            set
+            {
+                btnSelecionar.Enabled = value;
+                selecionar = value;
+            }
+        }
+
         public ConsultaModelo()
         {
             InitializeComponent();
@@ -17,7 +25,7 @@ namespace JTDFROTAS.geralVeiculos
         {
             InitializeComponent();
             this.campo = campo;
-            selecionar = true;
+            Selecionar = true;
         }
 
         private void ConsultaModelo_Load(object sender, EventArgs e)
@@ -47,10 +55,11 @@ namespace JTDFROTAS.geralVeiculos
 
         private void dgvModelo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (selecionar)
+            if (Selecionar)
             {
                 int id = (int)dgvModelo.CurrentRow.Cells[0].Value;
                 campo.Text = id.ToString();
+                Dispose();
             }
             else editarCelula();
         }
@@ -84,6 +93,16 @@ namespace JTDFROTAS.geralVeiculos
         {
             if (rdbTodos.Checked)
                 dgvModelo.DataSource = Modelo.Listar();
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            dgvModelo_CellDoubleClick(null, null);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            editarCelula();
         }
     }
 }
