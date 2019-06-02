@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JTDFROTAS.Classes;
+using JTDFROTAS.Pessoa;
 
 namespace JTDFROTAS.geralVeiculos
 {
@@ -54,10 +55,10 @@ namespace JTDFROTAS.geralVeiculos
                 return;
             }
             String placa = txtPlaca.Text.Trim();
-            int modelo = Int32.Parse(txtModelo.Text.Trim());
+            int modelo = Int32.Parse(txtCodModelo.Text.Trim());
             int cliente = Int32.Parse(txtCodCliente.Text.Trim());
             double custoMedio = Double.Parse(txtCustoMedio.Text.Trim());
-            String tipoVeiculo = cboTipo.SelectedText;
+            String tipoVeiculo = cboTipo.SelectedItem.ToString();
             Veiculo v = new Veiculo(placa,
                                     tipoVeiculo,
                                     modelo,
@@ -68,6 +69,47 @@ namespace JTDFROTAS.geralVeiculos
 
         private void FormVeiculo_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private bool childrenAberto(String formName)
+        {
+            foreach (Form form in Form1.container.MdiChildren)
+            {
+                if (form.Text == formName)
+                {
+                    form.Focus();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnBuscaCliente_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Pessoa"))
+                return;
+            ConsultaPessoa consPessoa = new ConsultaPessoa(txtCodCliente);
+            consPessoa.MdiParent = Form1.container;
+            consPessoa.Show();
+        }
+
+        private void txtCodCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtCodCliente.Text.Trim()))
+            {
+                txtCliente.Text = "";
+                return;
+            }
+            if (!Int32.TryParse(txtCodCliente.Text.Trim(), out int id))
+                return;
+            txtCliente.Text = Classes.Pessoa.Buscar(id);
+        }
+
+        private void cboTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(cboTipo.Text);
+            Console.WriteLine(cboTipo.SelectedItem);
 
         }
     }

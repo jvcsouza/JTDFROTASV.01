@@ -97,7 +97,7 @@ namespace JTDFROTAS.Classes
 
                 //Conn.Dispose();
                 com.Dispose();
-                return Convert.ToInt32(lines.ToString());
+                return (lines == null) ? 0 : Convert.ToInt32(lines.ToString());
             }
             catch (SqlException sqlError)
             {

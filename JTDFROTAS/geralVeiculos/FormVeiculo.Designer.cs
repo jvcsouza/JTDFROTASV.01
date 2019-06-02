@@ -41,7 +41,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscaCliente = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustoMedio = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,6 +109,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtCliente);
             this.groupBox2.Controls.Add(this.txtModelo);
             this.groupBox2.Controls.Add(this.txtPlaca);
             this.groupBox2.Controls.Add(this.label5);
@@ -116,7 +117,6 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btnBuscaCliente);
-            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.txtCodCliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
@@ -173,6 +173,7 @@
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(121, 25);
             this.cboTipo.TabIndex = 31;
+            this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -203,19 +204,7 @@
             this.btnBuscaCliente.Size = new System.Drawing.Size(29, 24);
             this.btnBuscaCliente.TabIndex = 27;
             this.btnBuscaCliente.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(126, 158);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(204, 24);
-            this.textBox1.TabIndex = 26;
-            this.textBox1.TabStop = false;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.btnBuscaCliente_Click);
             // 
             // txtCodCliente
             // 
@@ -224,6 +213,7 @@
             this.txtCodCliente.Name = "txtCodCliente";
             this.txtCodCliente.Size = new System.Drawing.Size(68, 24);
             this.txtCodCliente.TabIndex = 24;
+            this.txtCodCliente.TextChanged += new System.EventHandler(this.txtCodCliente_TextChanged);
             // 
             // label3
             // 
@@ -347,6 +337,17 @@
             this.txtCustoMedio.Size = new System.Drawing.Size(115, 24);
             this.txtCustoMedio.TabIndex = 0;
             // 
+            // txtCliente
+            // 
+            this.txtCliente.BackColor = System.Drawing.Color.White;
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCliente.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(126, 161);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Padding = new System.Windows.Forms.Padding(3);
+            this.txtCliente.Size = new System.Drawing.Size(204, 24);
+            this.txtCliente.TabIndex = 36;
+            // 
             // FormVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -389,7 +390,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscaCliente;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtCodCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -404,5 +404,6 @@
         private System.Windows.Forms.Label txtModelo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label txtDataUltimaMan;
+        private System.Windows.Forms.Label txtCliente;
     }
 }

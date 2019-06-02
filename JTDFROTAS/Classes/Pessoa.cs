@@ -70,6 +70,18 @@ namespace JTDFROTAS.Classes
             _codcidade = codcidade;
         }
 
+        public static String Buscar(int id)
+        {
+            Conexao.Query = $"SELECT NOME FROM PESSOA WHERE ID = {id}";
+            SqlDataReader dr = Conexao.ExecReader();
+            String nome = "";
+            if (!dr.Read())
+                nome = "";
+            else nome = dr[0].ToString();
+            dr.Close();
+            return nome;
+        }
+
         public virtual bool Registrar()
         {
             Conexao.Query = $@"EXECUTE REGISTRAPESSOA '{Nome}', {_codcidade}, '{Endereco[0]}', '{Endereco[1]}', {_ativo}";
@@ -96,7 +108,7 @@ namespace JTDFROTAS.Classes
             throw new NotImplementedException();
         }
 
-        public bool Buscar(int id)
+        bool ICRUD.Buscar(int id)
         {
             throw new NotImplementedException();
         }

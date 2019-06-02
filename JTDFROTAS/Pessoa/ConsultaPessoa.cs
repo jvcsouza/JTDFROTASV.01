@@ -22,6 +22,7 @@ namespace JTDFROTAS.Pessoa
         }
         public ConsultaPessoa(TextBox campo)
         {
+            InitializeComponent();
             selecionar = true;
             btnSelecionar.Enabled = true;
             this.campo = campo;
@@ -94,7 +95,7 @@ namespace JTDFROTAS.Pessoa
         {
             if (selecionar)
             {
-                campo.Text = dgvPessoa.CurrentRow.Cells[1].ToString();
+                campo.Text = dgvPessoa.CurrentRow.Cells[0].Value.ToString();
                 Dispose();
                 return;
             }
@@ -121,8 +122,9 @@ namespace JTDFROTAS.Pessoa
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(dgvPessoa.CurrentRow.Cells[0].ToString());
-
+            int id = Int32.Parse(dgvPessoa.CurrentRow.Cells[0].Value.ToString());
+            if (rdbJuridica.Checked)
+                dgvPessoa.DataSource = Juridica.Excluir(id);
         }
     }
 }

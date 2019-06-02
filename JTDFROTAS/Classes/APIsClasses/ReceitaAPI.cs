@@ -47,7 +47,7 @@ namespace JTDFROTAS.Classes
 
         [JsonProperty("numero")]
         //[JsonConverter(typeof(ParseStringConverter))]
-        public long Numero { get; set; }
+        public String Numero { get; set; }
 
         [JsonProperty("cep")]
         public string Cep { get; set; }

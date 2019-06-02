@@ -75,7 +75,7 @@ namespace JTDFROTAS
         {
             if (childrenAberto("Atualiza Pessoa Fisica"))
                 return;
-            FormJuridica fPessoaFisica = new FormJuridica();
+            FormFisica fPessoaFisica = new FormFisica();
             fPessoaFisica.MdiParent = this;
             fPessoaFisica.Show();
         }

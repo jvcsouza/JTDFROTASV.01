@@ -21,8 +21,8 @@ namespace JTDFROTAS.Classes
         }
         public bool Registrar()
         {
-            Conexao.Query = $"INSERT INTO VEICULO (CODCLIENTE, PLACA, TIPOVEICULO, DATAREGISTRO, CUSTOMEDIOPKM)" +
-                            $" VALUES ({codCliente}, '{placa.ToUpper()}', (SELECT ID FROM TIPOVEICULO WHERE NOME LIKE '{tipoVeiculo.ToUpper()}'), GETDATE(), {custoMedio}); " +
+            Conexao.Query = $"INSERT INTO VEICULO (CODMODELOVEICULO, CODCLIENTE, PLACA, TIPOVEICULO, DATARESGISTRO, CUSTOMEDIOPKM)" +
+                            $" VALUES ({codModelo}, {codCliente}, '{placa.ToUpper()}', (SELECT ID FROM TIPOVEICULO WHERE NOME LIKE '{tipoVeiculo.ToUpper()}'), GETDATE(), {custoMedio}); " +
                             $"SELECT SCOPE_IDENTITY() AS ID";
             SqlDataReader dr = Conexao.ExecReader();
             if (dr.Read()) id = Int32.Parse(dr[0].ToString());

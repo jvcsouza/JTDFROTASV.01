@@ -50,9 +50,16 @@ namespace JTDFROTAS.Classes
             dr.Close();
             return true;
         }
+        public static DataTable Excluir(int id)
+        {
+            Conexao.Query = $"UPDATE PESSOA SET ATIVO = 0 WHERE ID = {id}";
+            Conexao.ExecQuery();
+            MessageBox.Show(Form1.container, "Registro não pode ser alterado/excluido pois já foi utilizado em outra rotina do sistema! O Registro foi desativado.".ToUpper(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return Listar(true);
+        }
         public static DataTable Listar(bool ativo)
         {
-            Conexao.Query = $"SELECT P.ID, P.ID, P.NOME, J.FANTASIA, J.CNPJ, J.ATIVIDADE, C.NOME AS CIDADE, P.LOGRADOURO, P.NUM "+
+            Conexao.Query = $"SELECT P.ID, P.NOME, J.FANTASIA, J.CNPJ, J.ATIVIDADE, C.NOME AS CIDADE, P.LOGRADOURO, P.NUM "+
                             $" FROM PESSOA P" +
                             $" FULL OUTER JOIN JURIDICA J" +
                             $" ON J.CODPESSOA = P.ID" +
@@ -62,7 +69,7 @@ namespace JTDFROTAS.Classes
         }
         public static DataTable Listar()
         {
-            Conexao.Query = $"SELECT P.ID, P.ID, P.NOME, J.FANTASIA, J.CNPJ, J.ATIVIDADE, C.NOME AS CIDADE, P.LOGRADOURO, P.NUM" +
+            Conexao.Query = $"SELECT P.ID, P.NOME, J.FANTASIA, J.CNPJ, J.ATIVIDADE, C.NOME AS CIDADE, P.LOGRADOURO, P.NUM" +
                             $" FROM PESSOA P" +
                             $" FULL OUTER JOIN JURIDICA J" +
                             $" ON J.CODPESSOA = P.ID" +

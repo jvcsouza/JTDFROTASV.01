@@ -40,6 +40,13 @@ namespace JTDFROTAS.Pessoa
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txtCnpj.Text.Trim())
+                || String.IsNullOrWhiteSpace(txtNome.Text.Trim())
+                    || String.IsNullOrWhiteSpace(txtCodCidade.Text.Trim()))
+            {
+                MessageBox.Show(Form1.container, "Todos os campos precisam ser preenchidos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Juridica p = new Juridica(txtNome.Text,
                                       txtLogradouro.Text,
                                       txtLogradouroN.Text,
@@ -50,6 +57,11 @@ namespace JTDFROTAS.Pessoa
             if (!p.Registrar())
                 throw new Exception();
             txtId.Text = p.CodPessoaJuridica.ToString();
+            Dispose();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
             Dispose();
         }
     }

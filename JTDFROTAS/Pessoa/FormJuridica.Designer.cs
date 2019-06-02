@@ -33,6 +33,10 @@
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLogradouroN = new System.Windows.Forms.TextBox();
             this.txtCodCidade = new System.Windows.Forms.TextBox();
@@ -44,23 +48,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnBuscaCidade = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnConsultaCNPJ = new System.Windows.Forms.Button();
+            this.txtConsultaCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.txtConsultaCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.btnConsultaCNPJ = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnBuscaCidade = new System.Windows.Forms.Button();
             this.txtFantasia = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtAtividade = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtId
@@ -106,6 +106,50 @@
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contatos:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(294, 91);
+            this.dataGridView1.TabIndex = 30;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.button3.Location = new System.Drawing.Point(333, 83);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(29, 24);
+            this.button3.TabIndex = 29;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.button2.Location = new System.Drawing.Point(333, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(29, 24);
+            this.button2.TabIndex = 28;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.button1.Location = new System.Drawing.Point(333, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 24);
+            this.button1.TabIndex = 27;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -205,87 +249,14 @@
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             // 
-            // button3
+            // label7
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.button3.Location = new System.Drawing.Point(333, 83);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 24);
-            this.button3.TabIndex = 29;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.button2.Location = new System.Drawing.Point(333, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 24);
-            this.button2.TabIndex = 28;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.button1.Location = new System.Drawing.Point(333, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 24);
-            this.button1.TabIndex = 27;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnBuscaCidade
-            // 
-            this.btnBuscaCidade.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscaCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaCidade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscaCidade.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.btnBuscaCidade.Location = new System.Drawing.Point(125, 144);
-            this.btnBuscaCidade.Name = "btnBuscaCidade";
-            this.btnBuscaCidade.Size = new System.Drawing.Size(29, 24);
-            this.btnBuscaCidade.TabIndex = 36;
-            this.btnBuscaCidade.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconCancel;
-            this.btnCancelar.Location = new System.Drawing.Point(87, 17);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 57);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnGravar
-            // 
-            this.btnGravar.Image = global::JTDFROTAS.Properties.Resources.iconSave;
-            this.btnGravar.Location = new System.Drawing.Point(6, 17);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 57);
-            this.btnGravar.TabIndex = 1;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGravar.UseVisualStyleBackColor = true;
-            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
-            // txtConsultaCNPJ
-            // 
-            this.txtConsultaCNPJ.Location = new System.Drawing.Point(211, 37);
-            this.txtConsultaCNPJ.Mask = "99,999,999/9999-99";
-            this.txtConsultaCNPJ.Name = "txtConsultaCNPJ";
-            this.txtConsultaCNPJ.Size = new System.Drawing.Size(116, 24);
-            this.txtConsultaCNPJ.TabIndex = 3;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(208, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 17);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "CNPJ:";
             // 
             // btnConsultaCNPJ
             // 
@@ -300,14 +271,52 @@
             this.btnConsultaCNPJ.UseVisualStyleBackColor = false;
             this.btnConsultaCNPJ.Click += new System.EventHandler(this.btnConsultaCNPJ_Click);
             // 
-            // label7
+            // txtConsultaCNPJ
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(208, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 17);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "CNPJ:";
+            this.txtConsultaCNPJ.Location = new System.Drawing.Point(211, 37);
+            this.txtConsultaCNPJ.Mask = "99,999,999/9999-99";
+            this.txtConsultaCNPJ.Name = "txtConsultaCNPJ";
+            this.txtConsultaCNPJ.Size = new System.Drawing.Size(116, 24);
+            this.txtConsultaCNPJ.TabIndex = 3;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconCancel;
+            this.btnCancelar.Location = new System.Drawing.Point(87, 17);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 57);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGravar
+            // 
+            this.btnGravar.Image = global::JTDFROTAS.Properties.Resources.iconSave;
+            this.btnGravar.Location = new System.Drawing.Point(6, 17);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 57);
+            this.btnGravar.TabIndex = 1;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
+            // btnBuscaCidade
+            // 
+            this.btnBuscaCidade.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscaCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCidade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscaCidade.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.btnBuscaCidade.Location = new System.Drawing.Point(125, 144);
+            this.btnBuscaCidade.Name = "btnBuscaCidade";
+            this.btnBuscaCidade.Size = new System.Drawing.Size(29, 24);
+            this.btnBuscaCidade.TabIndex = 36;
+            this.btnBuscaCidade.UseVisualStyleBackColor = false;
             // 
             // txtFantasia
             // 
@@ -324,14 +333,6 @@
             this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 44;
             this.label8.Text = "Fantasia:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(294, 91);
-            this.dataGridView1.TabIndex = 30;
             // 
             // txtAtividade
             // 
@@ -386,9 +387,9 @@
             this.Text = "Atualiza Pessoa Juridica";
             this.Load += new System.EventHandler(this.FormJuridica_Load);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
