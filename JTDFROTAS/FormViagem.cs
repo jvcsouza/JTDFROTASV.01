@@ -136,8 +136,8 @@ namespace JTDFROTAS.Movimento
         private void consultaAPI()
         {
             MapsApi a = APIs.consultaMaps(txtOrigem.Text.Trim(), txtDestino.Text.Trim());
-            txtDuracao.Text = (null == a.Rows[0].Elements[0].Distance) ? "null" : a.Rows[0].Elements[0].Distance.Text;
-            txtDistancia.Text = (null == a.Rows[0].Elements[0].Duration) ? "null" : a.Rows[0].Elements[0].Duration.Text;
+            txtDuracao.Text = (null == a.Rows[0].Elements[0].Duration) ? "null" : a.Rows[0].Elements[0].Duration.Text;
+            txtDistancia.Text = (null == a.Rows[0].Elements[0].Distance) ? "null" : a.Rows[0].Elements[0].Distance.Text;
         }
 
         private void btnBuscaCliente_Click(object sender, EventArgs e)
@@ -173,6 +173,8 @@ namespace JTDFROTAS.Movimento
             try
             {
                 lsView.Items.Remove(lsView.SelectedItems[0]);
+                lsView.Visible = false;
+                lsView.Visible = true;
             }
             catch { }
         }
@@ -185,6 +187,21 @@ namespace JTDFROTAS.Movimento
         private void lsView_Leave(object sender, EventArgs e)
         {
             
+        }
+
+        private void lsView_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            if (lsView.Items.Count > 0)
+                gpbDados.Enabled = true;
+            else gpbDados.Enabled = false;
+                
+        }
+
+        private void lsView_VisibleChanged(object sender, EventArgs e)
+        {
+            if (lsView.Items.Count > 0)
+                gpbDados.Enabled = true;
+            else gpbDados.Enabled = false;
         }
     }
 }

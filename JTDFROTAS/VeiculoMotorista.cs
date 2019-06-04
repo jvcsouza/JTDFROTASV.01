@@ -96,6 +96,8 @@ namespace JTDFROTAS
             ListViewItem listItem = new ListViewItem(txtVeiculo.Text);
             listItem.SubItems.Add(txtMotorista.Text);
             list.Items.Add(listItem);
+            list.Visible = false;
+            list.Visible = true;
             Dispose();
         }
     }

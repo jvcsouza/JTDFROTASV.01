@@ -38,7 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.gpbInfos = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gpbDados = new System.Windows.Forms.GroupBox();
             this.txtCodOrigem = new System.Windows.Forms.TextBox();
             this.txtCodDestino = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -60,7 +60,7 @@
             this.btnBuscaCidadeDestino = new System.Windows.Forms.Button();
             this.btnBuscaCidadeOrigem = new System.Windows.Forms.Button();
             this.gpbInfos.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gpbDados.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gpbVeiculo.SuspendLayout();
             this.SuspendLayout();
@@ -164,28 +164,28 @@
             this.gpbInfos.TabStop = false;
             this.gpbInfos.Text = "Informações Adicionais:";
             // 
-            // groupBox2
+            // gpbDados
             // 
-            this.groupBox2.Controls.Add(this.txtCusto);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.btnBuscaCidadeDestino);
-            this.groupBox2.Controls.Add(this.txtCodDestino);
-            this.groupBox2.Controls.Add(this.btnBuscaCidadeOrigem);
-            this.groupBox2.Controls.Add(this.txtOrigem);
-            this.groupBox2.Controls.Add(this.txtCodOrigem);
-            this.groupBox2.Controls.Add(this.gpbInfos);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtDestino);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(12, 198);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(483, 215);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dados de Viagem:";
+            this.gpbDados.Controls.Add(this.txtCusto);
+            this.gpbDados.Controls.Add(this.label10);
+            this.gpbDados.Controls.Add(this.label9);
+            this.gpbDados.Controls.Add(this.dateTimePicker1);
+            this.gpbDados.Controls.Add(this.btnBuscaCidadeDestino);
+            this.gpbDados.Controls.Add(this.txtCodDestino);
+            this.gpbDados.Controls.Add(this.btnBuscaCidadeOrigem);
+            this.gpbDados.Controls.Add(this.txtOrigem);
+            this.gpbDados.Controls.Add(this.txtCodOrigem);
+            this.gpbDados.Controls.Add(this.gpbInfos);
+            this.gpbDados.Controls.Add(this.label5);
+            this.gpbDados.Controls.Add(this.txtDestino);
+            this.gpbDados.Controls.Add(this.label6);
+            this.gpbDados.Enabled = false;
+            this.gpbDados.Location = new System.Drawing.Point(12, 198);
+            this.gpbDados.Name = "gpbDados";
+            this.gpbDados.Size = new System.Drawing.Size(483, 215);
+            this.gpbDados.TabIndex = 14;
+            this.gpbDados.TabStop = false;
+            this.gpbDados.Text = "Dados de Viagem:";
             // 
             // txtCodOrigem
             // 
@@ -219,12 +219,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "23/11/2019 02:03";
+            this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(9, 128);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateTimePicker1.Size = new System.Drawing.Size(153, 24);
             this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.Value = new System.DateTime(2019, 6, 4, 2, 38, 41, 0);
             // 
             // label9
             // 
@@ -306,7 +308,9 @@
             this.lsView.TabIndex = 0;
             this.lsView.UseCompatibleStateImageBehavior = false;
             this.lsView.View = System.Windows.Forms.View.Details;
+            this.lsView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.lsView_DrawItem);
             this.lsView.ItemActivate += new System.EventHandler(this.lsView_ItemActivate);
+            this.lsView.VisibleChanged += new System.EventHandler(this.lsView_VisibleChanged);
             this.lsView.Leave += new System.EventHandler(this.lsView_Leave);
             // 
             // columnHeader1
@@ -418,7 +422,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gpbDados);
             this.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -432,8 +436,8 @@
             this.Load += new System.EventHandler(this.FormViagem_Load);
             this.gpbInfos.ResumeLayout(false);
             this.gpbInfos.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gpbDados.ResumeLayout(false);
+            this.gpbDados.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.gpbVeiculo.ResumeLayout(false);
@@ -451,7 +455,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox gpbInfos;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gpbDados;
         private System.Windows.Forms.Button btnBuscaCidadeDestino;
         private System.Windows.Forms.TextBox txtCodDestino;
         private System.Windows.Forms.Button btnBuscaCidadeOrigem;
