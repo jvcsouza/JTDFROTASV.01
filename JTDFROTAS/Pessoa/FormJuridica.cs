@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JTDFROTAS.Classes;
+using JTDFROTAS.geralSistema.origemDestino;
 
 namespace JTDFROTAS.Pessoa
 {
@@ -63,6 +64,37 @@ namespace JTDFROTAS.Pessoa
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+        private bool childrenAberto(String formName)
+        {
+            foreach (Form form in MdiChildren)
+            {
+                if (form.Text == formName)
+                {
+                    form.Focus();
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void btnBuscaCidade_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Cidade"))
+                return;
+            ConsultaCidade consCidade = new ConsultaCidade(txtCodCidade);
+            consCidade.MdiParent = Form1.container;
+            consCidade.Show();
+        }
+
+        private void txtCodCidade_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtCodCidade.Text.Trim())
+               || !Int32.TryParse(txtCodCidade.Text.Trim(), out int i))
+            {
+                txtCidade.Text = "";
+                return;
+            }
+            txtCidade.Text = Cidade.Buscar(i);
         }
     }
 }

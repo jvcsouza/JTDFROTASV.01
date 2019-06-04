@@ -82,5 +82,16 @@ namespace JTDFROTAS.Classes
             dr.Close();
             return nome;
         }
+        public static String consultaCustoMedio(String placa)
+        {
+            String custo = "";
+            Conexao.Query = $"SELECT CUSTOMEDIOPKM FROM VEICULO WHERE PLACA LIKE '{placa}'";
+            SqlDataReader dr = Conexao.ExecReader();
+            if (dr != null)
+                if (dr.Read())
+                    custo = dr[0].ToString();
+            if(!dr.IsClosed) dr.Close();
+            return custo;
+        }
     }
 }

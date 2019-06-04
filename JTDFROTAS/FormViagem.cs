@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JTDFROTAS.Classes;
 using System.Net;
+using System.Text.RegularExpressions;
 using JTDFROTAS.Pessoa;
 using JTDFROTAS.geralSistema.origemDestino;
 
@@ -17,6 +18,8 @@ namespace JTDFROTAS.Movimento
     public partial class FormViagem : Form
     {
         private List<Veiculo> listVeiculo;
+        private List<Double> valores = new List<Double>();
+
         public FormViagem()
         {
             InitializeComponent();
@@ -131,6 +134,8 @@ namespace JTDFROTAS.Movimento
                || String.IsNullOrWhiteSpace(txtOrigem.Text))
                 return;
             consultaAPI();
+            lsView.Visible = false;
+            lsView.Visible = true;
         }
 
         private void consultaAPI()
@@ -186,7 +191,7 @@ namespace JTDFROTAS.Movimento
 
         private void lsView_Leave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void lsView_DrawItem(object sender, DrawListViewItemEventArgs e)
@@ -194,14 +199,34 @@ namespace JTDFROTAS.Movimento
             if (lsView.Items.Count > 0)
                 gpbDados.Enabled = true;
             else gpbDados.Enabled = false;
-                
+
         }
 
         private void lsView_VisibleChanged(object sender, EventArgs e)
         {
             if (lsView.Items.Count > 0)
+            {
+                valores.Clear();
+                foreach (ListViewItem item in lsView.Items)
+                {
+                    valores.Add(Double.Parse(Veiculo.consultaCustoMedio(item.Text)));
+                }
+                if (!String.IsNullOrWhiteSpace(txtDistancia.Text) && txtDistancia.Text != "null")
+                {
+                    Double acumula = 0;
+                    foreach (Double v in valores)
+                    {
+                        acumula += v * Double.Parse(Regex.Replace(txtDistancia.Text, "[^0-9]", ""));
+                    }
+                    txtCusto.Text = $"R${acumula}";
+                }
                 gpbDados.Enabled = true;
-            else gpbDados.Enabled = false;
+            }
+            else
+            {
+                txtCusto.Text = "";
+                gpbDados.Enabled = false;
+            }
         }
     }
 }

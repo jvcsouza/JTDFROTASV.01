@@ -113,6 +113,7 @@ namespace JTDFROTAS.Classes
                              SELECT SCOPE_IDENTITY() AS ID";
             SqlDataReader dr = Conexao.ExecReader();
             int id;
+            if (dr == null) return 0;
             if (!dr.Read())
                 return id = 0;
             id = Convert.ToInt32(dr[0].ToString());

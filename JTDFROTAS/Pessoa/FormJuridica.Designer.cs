@@ -174,6 +174,7 @@
             this.txtCodCidade.Name = "txtCodCidade";
             this.txtCodCidade.Size = new System.Drawing.Size(68, 24);
             this.txtCodCidade.TabIndex = 35;
+            this.txtCodCidade.TextChanged += new System.EventHandler(this.txtCodCidade_TextChanged);
             // 
             // txtCidade
             // 
@@ -317,6 +318,7 @@
             this.btnBuscaCidade.Size = new System.Drawing.Size(29, 24);
             this.btnBuscaCidade.TabIndex = 36;
             this.btnBuscaCidade.UseVisualStyleBackColor = false;
+            this.btnBuscaCidade.Click += new System.EventHandler(this.btnBuscaCidade_Click);
             // 
             // txtFantasia
             // 
