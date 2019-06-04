@@ -15,10 +15,12 @@ namespace JTDFROTAS.Pessoa
     {
         private bool selecionar = false;
         private TextBox campo;
+        private bool moto = false;
 
         public ConsultaPessoa()
         {
             InitializeComponent();
+            dgvPessoa.DataSource = Juridica.Listar(true);
         }
         public ConsultaPessoa(TextBox campo)
         {
@@ -26,10 +28,23 @@ namespace JTDFROTAS.Pessoa
             selecionar = true;
             btnSelecionar.Enabled = true;
             this.campo = campo;
+            dgvPessoa.DataSource = Juridica.Listar(true);
+        }
+        public ConsultaPessoa(bool motorista, TextBox campo)
+        {
+            InitializeComponent();
+            moto = motorista;
+            selecionar = true;
+            btnSelecionar.Enabled = true;
+            this.campo = campo;
+            gpbAtivo.Enabled = false;
+            gpbTipo.Enabled = false;
+            dgvPessoa.DataSource = Motorista.Listar(true);
+            //dgvPessoa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
         private void ConsultaPessoa_Load(object sender, EventArgs e)
         {
-            dgvPessoa.DataSource = Juridica.Listar(true);
+            
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -108,15 +123,23 @@ namespace JTDFROTAS.Pessoa
             DataTable table = null;
 
             if (rdbSim.Checked)
-                if (rdbJuridica.Checked) table = Juridica.ListarBusca(txtPesquisaNome.Text.Trim(), true);
-                else table = Fisica.ListarBusca(txtPesquisaNome.Text.Trim(), true);
+                if (moto)
+                    table = Motorista.Listar(true);
+                else
+                    if (rdbJuridica.Checked) table = Juridica.ListarBusca(txtPesquisaNome.Text.Trim(), true);
+                    else table = Fisica.ListarBusca(txtPesquisaNome.Text.Trim(), true);
             else if (rdbNao.Checked)
-                if (rdbJuridica.Checked) table = Juridica.ListarBusca(txtPesquisaNome.Text.Trim(), false);
-                else table = Fisica.ListarBusca(txtPesquisaNome.Text.Trim(), false);
+                if (moto)
+                    table = Motorista.Listar(false);
+                else
+                    if (rdbJuridica.Checked) table = Juridica.ListarBusca(txtPesquisaNome.Text.Trim(), false);
+                    else table = Fisica.ListarBusca(txtPesquisaNome.Text.Trim(), false);
             else if (rdbTodos.Checked)
-                if (rdbJuridica.Checked) table = Juridica.ListarBusca(txtPesquisaNome.Text.Trim());
-                else table = Fisica.ListarBusca(txtPesquisaNome.Text.Trim());
-
+                if (moto)
+                    table = Motorista.Listar();
+                else
+                    if (rdbJuridica.Checked) table = Juridica.ListarBusca(txtPesquisaNome.Text.Trim());
+                    else table = Fisica.ListarBusca(txtPesquisaNome.Text.Trim());
             dgvPessoa.DataSource = table;
         }
 
@@ -125,6 +148,11 @@ namespace JTDFROTAS.Pessoa
             int id = Int32.Parse(dgvPessoa.CurrentRow.Cells[0].Value.ToString());
             if (rdbJuridica.Checked)
                 dgvPessoa.DataSource = Juridica.Excluir(id);
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            dgvPessoa_CellContentDoubleClick(null, null);
         }
     }
 }

@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaVeiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.rdbNao = new System.Windows.Forms.RadioButton();
             this.rdbSim = new System.Windows.Forms.RadioButton();
-            this.txtBusca = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvMarca = new System.Windows.Forms.DataGridView();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvVeiculo = new System.Windows.Forms.DataGridView();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,6 +63,21 @@
             this.groupBox1.Size = new System.Drawing.Size(580, 78);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnEditar.Image = global::JTDFROTAS.Properties.Resources.iconEdit;
+            this.btnEditar.Location = new System.Drawing.Point(265, 13);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(77, 57);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
             // 
             // groupBox2
             // 
@@ -85,6 +100,7 @@
             this.rdbTodos.TabIndex = 2;
             this.rdbTodos.Text = "Todos";
             this.rdbTodos.UseVisualStyleBackColor = true;
+            this.rdbTodos.CheckedChanged += new System.EventHandler(this.rdbTodos_CheckedChanged);
             // 
             // rdbNao
             // 
@@ -95,6 +111,7 @@
             this.rdbNao.TabIndex = 1;
             this.rdbNao.Text = "Não";
             this.rdbNao.UseVisualStyleBackColor = true;
+            this.rdbNao.CheckedChanged += new System.EventHandler(this.rdbNao_CheckedChanged);
             // 
             // rdbSim
             // 
@@ -107,6 +124,52 @@
             this.rdbSim.TabStop = true;
             this.rdbSim.Text = "Sim";
             this.rdbSim.UseVisualStyleBackColor = true;
+            this.rdbSim.CheckedChanged += new System.EventHandler(this.rdbSim_CheckedChanged);
+            // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Enabled = false;
+            this.btnSelecionar.Image = global::JTDFROTAS.Properties.Resources.iconSelectHand;
+            this.btnSelecionar.Location = new System.Drawing.Point(7, 13);
+            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(80, 57);
+            this.btnSelecionar.TabIndex = 3;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconDelete;
+            this.btnCancelar.Location = new System.Drawing.Point(180, 13);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(77, 57);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Excluir";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::JTDFROTAS.Properties.Resources.iconNew;
+            this.btnNovo.Location = new System.Drawing.Point(95, 13);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(77, 57);
+            this.btnNovo.TabIndex = 1;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // txtBusca
             // 
@@ -124,22 +187,23 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Buscar p/ Nome:";
             // 
-            // dgvMarca
+            // dgvVeiculo
             // 
-            this.dgvMarca.AllowUserToAddRows = false;
-            this.dgvMarca.AllowUserToDeleteRows = false;
-            this.dgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvMarca.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMarca.Location = new System.Drawing.Point(9, 139);
-            this.dgvMarca.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvMarca.MultiSelect = false;
-            this.dgvMarca.Name = "dgvMarca";
-            this.dgvMarca.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarca.Size = new System.Drawing.Size(573, 236);
-            this.dgvMarca.TabIndex = 8;
+            this.dgvVeiculo.AllowUserToAddRows = false;
+            this.dgvVeiculo.AllowUserToDeleteRows = false;
+            this.dgvVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVeiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVeiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvVeiculo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvVeiculo.Location = new System.Drawing.Point(9, 139);
+            this.dgvVeiculo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvVeiculo.MultiSelect = false;
+            this.dgvVeiculo.Name = "dgvVeiculo";
+            this.dgvVeiculo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvVeiculo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVeiculo.Size = new System.Drawing.Size(573, 236);
+            this.dgvVeiculo.TabIndex = 8;
+            this.dgvVeiculo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVeiculo_CellContentDoubleClick);
             // 
             // cboCliente
             // 
@@ -157,63 +221,6 @@
             this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "Buscar p/ Cliente:";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnEditar.Image = global::JTDFROTAS.Properties.Resources.iconEdit;
-            this.btnEditar.Location = new System.Drawing.Point(265, 13);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(77, 57);
-            this.btnEditar.TabIndex = 8;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Visible = false;
-            // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.Enabled = false;
-            this.btnSelecionar.Image = global::JTDFROTAS.Properties.Resources.iconSelectHand;
-            this.btnSelecionar.Location = new System.Drawing.Point(7, 13);
-            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(80, 57);
-            this.btnSelecionar.TabIndex = 3;
-            this.btnSelecionar.Text = "Selecionar";
-            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Image = global::JTDFROTAS.Properties.Resources.iconDelete;
-            this.btnCancelar.Location = new System.Drawing.Point(180, 13);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(77, 57);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Excluir";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Image = global::JTDFROTAS.Properties.Resources.iconNew;
-            this.btnNovo.Location = new System.Drawing.Point(95, 13);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(77, 57);
-            this.btnNovo.TabIndex = 1;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // button2
             // 
@@ -238,7 +245,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvMarca);
+            this.Controls.Add(this.dgvVeiculo);
             this.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -249,10 +256,11 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Veiculo";
+            this.Load += new System.EventHandler(this.ConsultaVeiculo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +280,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvMarca;
+        private System.Windows.Forms.DataGridView dgvVeiculo;
         private System.Windows.Forms.ComboBox cboCliente;
         private System.Windows.Forms.Label label2;
     }

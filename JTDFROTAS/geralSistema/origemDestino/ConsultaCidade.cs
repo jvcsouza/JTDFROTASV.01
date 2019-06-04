@@ -24,6 +24,7 @@ namespace JTDFROTAS.geralSistema.origemDestino
             InitializeComponent();
             this.campo = campo;
             selecionar = true;
+            btnSelecionar.Enabled = selecionar;
         }
 
         private void ConsultaCidade_Load(object sender, EventArgs e)
@@ -99,6 +100,16 @@ namespace JTDFROTAS.geralSistema.origemDestino
                 campo.Text = dgvCidade.CurrentRow.Cells[0].Value.ToString();
                 Dispose();
             }
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            dgvCidade_CellDoubleClick(null, null);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            editarCelular();
         }
     }
 }

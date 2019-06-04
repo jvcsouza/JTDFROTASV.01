@@ -39,9 +39,20 @@ namespace JTDFROTAS.Classes
             throw new NotImplementedException();
         }
 
-        public bool Buscar(int id)
+        bool ICRUD.Buscar(int id)
         {
             throw new NotImplementedException();
+        }
+        public static String Buscar(int idCidade)
+        {
+            Conexao.Query = $"SELECT NOME FROM CIDADE WHERE ID = {idCidade} AND ATIVO = 1";
+            SqlDataReader dr = Conexao.ExecReader();
+            String nome;
+            if (!dr.Read())
+                nome = "";
+            else nome = dr[0].ToString();
+            dr.Close();
+            return nome;
         }
         public static int Buscar(String nome)
         {

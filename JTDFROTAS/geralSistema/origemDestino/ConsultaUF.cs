@@ -88,8 +88,8 @@ namespace JTDFROTAS.geralSistema.origemDestino
             int id = (int)dgvUF.CurrentRow.Cells[0].Value;
             String nome = dgvUF.CurrentRow.Cells[1].Value.ToString();
             String sigla = dgvUF.CurrentRow.Cells[2].Value.ToString();
-            bool ativo = (bool)dgvUF.CurrentRow.Cells[4].Value;
-            UF estado = new UF(id, nome, sigla, ativo);
+            //bool ativo = (bool)dgvUF.CurrentRow.Cells[4].Value;
+            UF estado = new UF(id, nome, sigla, true);
             FormUF fUF = new FormUF(estado);
             fUF.MdiParent = Form1.container;
             fUF.Show();
@@ -107,6 +107,11 @@ namespace JTDFROTAS.geralSistema.origemDestino
         private void btnEditar_Click(object sender, EventArgs e)
         {
             editarCelula();
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            dgvUF_CellDoubleClick(null, null);
         }
     }
 }

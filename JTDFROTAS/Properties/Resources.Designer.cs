@@ -63,6 +63,36 @@ namespace JTDFROTAS.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconAdc {
+            get {
+                object obj = ResourceManager.GetObject("iconAdc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconCalcula {
+            get {
+                object obj = ResourceManager.GetObject("iconCalcula", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconCalcula3 {
+            get {
+                object obj = ResourceManager.GetObject("iconCalcula3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconCancel {
             get {
                 object obj = ResourceManager.GetObject("iconCancel", resourceCulture);
@@ -136,6 +166,16 @@ namespace JTDFROTAS.Properties {
         internal static System.Drawing.Bitmap iconSelectHand {
             get {
                 object obj = ResourceManager.GetObject("iconSelectHand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconSub {
+            get {
+                object obj = ResourceManager.GetObject("iconSub", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

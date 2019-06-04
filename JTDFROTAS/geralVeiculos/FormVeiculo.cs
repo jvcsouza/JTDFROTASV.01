@@ -49,7 +49,8 @@ namespace JTDFROTAS.geralVeiculos
             if (String.IsNullOrWhiteSpace(txtPlaca.Text.Trim())
                 || String.IsNullOrWhiteSpace(txtModelo.Text.Trim())
                     || String.IsNullOrWhiteSpace(txtCodCliente.Text.Trim())
-                        || String.IsNullOrWhiteSpace(txtCustoMedio.Text.Trim()))
+                        || String.IsNullOrWhiteSpace(cboTipo.SelectedItem.ToString().Trim())
+                            || String.IsNullOrWhiteSpace(txtCustoMedio.Text.Trim()))
             {
                 MessageBox.Show(this, "Todos os campos precisam ser Preenchidos!", "Problemas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -58,13 +59,14 @@ namespace JTDFROTAS.geralVeiculos
             int modelo = Int32.Parse(txtCodModelo.Text.Trim());
             int cliente = Int32.Parse(txtCodCliente.Text.Trim());
             double custoMedio = Double.Parse(txtCustoMedio.Text.Trim());
-            String tipoVeiculo = cboTipo.SelectedItem.ToString();
+            String tipoVeiculo = cboTipo.SelectedItem.ToString().Trim();
             Veiculo v = new Veiculo(placa,
                                     tipoVeiculo,
                                     modelo,
                                     cliente,
                                     custoMedio);
             v.Registrar();
+            Dispose();
         }
 
         private void FormVeiculo_Load(object sender, EventArgs e)
