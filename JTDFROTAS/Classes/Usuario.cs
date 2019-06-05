@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Data.SqlClient;
 
 namespace JTDFROTAS.Classes
 {
     public class Usuario : ICRUD
     {
-        private int _id;
+        private static int id;
         private static String _nome;
         private static String _senha;
 
@@ -34,7 +35,9 @@ namespace JTDFROTAS.Classes
                 _senha = value;
             }
         }
-        
+
+        public static int Id { get => id; set => id = value; }
+
         public Usuario(String usuario, String senha)
         {
             Nome = usuario;
@@ -48,9 +51,13 @@ namespace JTDFROTAS.Classes
         public bool Logar()
         {
             Conexao.Query = $"EXECUTE LOGAR '{Nome}', '{Senha}'";
-            if (Conexao.ExecQuery() > 0)
-                return true;
-            return false;
+            SqlDataReader dr = Conexao.ExecReader();
+            if (dr != null)
+                if (dr.Read())
+                    Id = Int32.Parse(dr[0].ToString());
+                else Id = 0;
+            if (!dr.IsClosed) dr.Close();
+            return Id != 0 ? true : false;
         }
 
         public bool Registrar()

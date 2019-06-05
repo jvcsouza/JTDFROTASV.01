@@ -64,7 +64,39 @@ namespace JTDFROTAS.Movimento
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-
+            //try
+            //{
+            if (!gpbDados.Enabled)
+                MessageBox.Show(this, "Todos os campos precisam ser preenchidos!", "Problemas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+                if (String.IsNullOrWhiteSpace(txtOrigem.Text.Trim())
+                    || String.IsNullOrWhiteSpace(txtDestino.Text.Trim()))
+                return;
+            else
+            {
+                Viagem v = new Viagem(
+                         Int32.Parse(txtCodDestino.Text.Trim()),
+                         Int32.Parse(txtCodOrigem.Text.Trim()),
+                         Int32.Parse(txtCodCliente.Text.Trim()),
+                         Double.Parse(txtCusto.Text.Trim().Replace("R$", "")),
+                         Double.Parse(txtDistancia.Text.Trim().Replace(" km", "")),
+                                      dtEntrega.Text);
+                if (v.Registrar())
+                {
+                    foreach (ListViewItem i in lsView.Items)
+                    {
+                        Frota f = new Frota(i.Text.Trim(), i.SubItems[1].Text, v.Id);
+                        f.Registar();
+                    }
+                    MessageBox.Show(this, "Dados relacionados a viagem gravados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dispose();
+                }
+            }
+            //}
+            //catch(Exception err)
+            //{
+            //    MessageBox.Show(this, err.Message, err.HResult.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

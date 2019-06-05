@@ -39,26 +39,26 @@
             this.label8 = new System.Windows.Forms.Label();
             this.gpbInfos = new System.Windows.Forms.GroupBox();
             this.gpbDados = new System.Windows.Forms.GroupBox();
-            this.txtCodOrigem = new System.Windows.Forms.TextBox();
-            this.txtCodDestino = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtCusto = new System.Windows.Forms.Label();
-            this.txtCodCliente = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtEntrega = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscaCidadeDestino = new System.Windows.Forms.Button();
+            this.txtCodDestino = new System.Windows.Forms.TextBox();
+            this.btnBuscaCidadeOrigem = new System.Windows.Forms.Button();
+            this.txtCodOrigem = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtCliente = new System.Windows.Forms.Label();
+            this.btnBuscaCliente = new System.Windows.Forms.Button();
+            this.txtCodCliente = new System.Windows.Forms.TextBox();
             this.gpbVeiculo = new System.Windows.Forms.GroupBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.lsView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.btnBuscaCliente = new System.Windows.Forms.Button();
-            this.btnBuscaCidadeDestino = new System.Windows.Forms.Button();
-            this.btnBuscaCidadeOrigem = new System.Windows.Forms.Button();
             this.gpbInfos.SuspendLayout();
             this.gpbDados.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -169,7 +169,7 @@
             this.gpbDados.Controls.Add(this.txtCusto);
             this.gpbDados.Controls.Add(this.label10);
             this.gpbDados.Controls.Add(this.label9);
-            this.gpbDados.Controls.Add(this.dateTimePicker1);
+            this.gpbDados.Controls.Add(this.dtEntrega);
             this.gpbDados.Controls.Add(this.btnBuscaCidadeDestino);
             this.gpbDados.Controls.Add(this.txtCodDestino);
             this.gpbDados.Controls.Add(this.btnBuscaCidadeOrigem);
@@ -187,14 +187,60 @@
             this.gpbDados.TabStop = false;
             this.gpbDados.Text = "Dados de Viagem:";
             // 
-            // txtCodOrigem
+            // txtCusto
             // 
-            this.txtCodOrigem.Location = new System.Drawing.Point(94, 29);
-            this.txtCodOrigem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCodOrigem.Name = "txtCodOrigem";
-            this.txtCodOrigem.Size = new System.Drawing.Size(68, 24);
-            this.txtCodOrigem.TabIndex = 4;
-            this.txtCodOrigem.TextChanged += new System.EventHandler(this.txtCodOrigem_TextChanged);
+            this.txtCusto.BackColor = System.Drawing.Color.White;
+            this.txtCusto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCusto.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusto.Location = new System.Drawing.Point(9, 179);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Padding = new System.Windows.Forms.Padding(3);
+            this.txtCusto.Size = new System.Drawing.Size(153, 25);
+            this.txtCusto.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 18);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Custo Aproximado:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 107);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 18);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Previsão de Entrega:";
+            // 
+            // dtEntrega
+            // 
+            this.dtEntrega.CustomFormat = "";
+            this.dtEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtEntrega.Location = new System.Drawing.Point(9, 128);
+            this.dtEntrega.Name = "dtEntrega";
+            this.dtEntrega.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtEntrega.Size = new System.Drawing.Size(153, 24);
+            this.dtEntrega.TabIndex = 8;
+            this.dtEntrega.Value = new System.DateTime(2019, 6, 4, 2, 38, 41, 0);
+            // 
+            // btnBuscaCidadeDestino
+            // 
+            this.btnBuscaCidadeDestino.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscaCidadeDestino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCidadeDestino.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscaCidadeDestino.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.btnBuscaCidadeDestino.Location = new System.Drawing.Point(148, 66);
+            this.btnBuscaCidadeDestino.Name = "btnBuscaCidadeDestino";
+            this.btnBuscaCidadeDestino.Size = new System.Drawing.Size(29, 24);
+            this.btnBuscaCidadeDestino.TabIndex = 7;
+            this.btnBuscaCidadeDestino.UseVisualStyleBackColor = false;
+            this.btnBuscaCidadeDestino.Click += new System.EventHandler(this.btnBuscaCidadeDestino_Click);
             // 
             // txtCodDestino
             // 
@@ -204,6 +250,28 @@
             this.txtCodDestino.Size = new System.Drawing.Size(68, 24);
             this.txtCodDestino.TabIndex = 6;
             this.txtCodDestino.TextChanged += new System.EventHandler(this.txtCodDestino_TextChanged);
+            // 
+            // btnBuscaCidadeOrigem
+            // 
+            this.btnBuscaCidadeOrigem.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscaCidadeOrigem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCidadeOrigem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscaCidadeOrigem.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.btnBuscaCidadeOrigem.Location = new System.Drawing.Point(148, 29);
+            this.btnBuscaCidadeOrigem.Name = "btnBuscaCidadeOrigem";
+            this.btnBuscaCidadeOrigem.Size = new System.Drawing.Size(29, 24);
+            this.btnBuscaCidadeOrigem.TabIndex = 5;
+            this.btnBuscaCidadeOrigem.UseVisualStyleBackColor = false;
+            this.btnBuscaCidadeOrigem.Click += new System.EventHandler(this.btnBuscaCidadeOrigem_Click);
+            // 
+            // txtCodOrigem
+            // 
+            this.txtCodOrigem.Location = new System.Drawing.Point(94, 29);
+            this.txtCodOrigem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCodOrigem.Name = "txtCodOrigem";
+            this.txtCodOrigem.Size = new System.Drawing.Size(68, 24);
+            this.txtCodOrigem.TabIndex = 4;
+            this.txtCodOrigem.TextChanged += new System.EventHandler(this.txtCodOrigem_TextChanged);
             // 
             // groupBox3
             // 
@@ -217,57 +285,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cliente";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 24);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.Value = new System.DateTime(2019, 6, 4, 2, 38, 41, 0);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 107);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 18);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Previsão de Entrega:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 155);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 18);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Custo Aproximado:";
-            // 
-            // txtCusto
-            // 
-            this.txtCusto.BackColor = System.Drawing.Color.White;
-            this.txtCusto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCusto.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusto.Location = new System.Drawing.Point(9, 179);
-            this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Padding = new System.Windows.Forms.Padding(3);
-            this.txtCusto.Size = new System.Drawing.Size(153, 25);
-            this.txtCusto.TabIndex = 27;
-            // 
-            // txtCodCliente
-            // 
-            this.txtCodCliente.Location = new System.Drawing.Point(13, 24);
-            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Size = new System.Drawing.Size(68, 24);
-            this.txtCodCliente.TabIndex = 1;
-            this.txtCodCliente.TextChanged += new System.EventHandler(this.txtCodCliente_TextChanged);
-            // 
             // txtCliente
             // 
             this.txtCliente.BackColor = System.Drawing.Color.White;
@@ -279,6 +296,28 @@
             this.txtCliente.Size = new System.Drawing.Size(164, 26);
             this.txtCliente.TabIndex = 28;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            // 
+            // btnBuscaCliente
+            // 
+            this.btnBuscaCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscaCliente.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
+            this.btnBuscaCliente.Location = new System.Drawing.Point(67, 24);
+            this.btnBuscaCliente.Name = "btnBuscaCliente";
+            this.btnBuscaCliente.Size = new System.Drawing.Size(29, 24);
+            this.btnBuscaCliente.TabIndex = 2;
+            this.btnBuscaCliente.UseVisualStyleBackColor = false;
+            this.btnBuscaCliente.Click += new System.EventHandler(this.btnBuscaCliente_Click);
+            // 
+            // txtCodCliente
+            // 
+            this.txtCodCliente.Location = new System.Drawing.Point(13, 24);
+            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCodCliente.Name = "txtCodCliente";
+            this.txtCodCliente.Size = new System.Drawing.Size(68, 24);
+            this.txtCodCliente.TabIndex = 1;
+            this.txtCodCliente.TextChanged += new System.EventHandler(this.txtCodCliente_TextChanged);
             // 
             // gpbVeiculo
             // 
@@ -292,6 +331,30 @@
             this.gpbVeiculo.TabIndex = 16;
             this.gpbVeiculo.TabStop = false;
             this.gpbVeiculo.Text = "Veiculos/Motorista:";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.Image = global::JTDFROTAS.Properties.Resources.iconAdc;
+            this.btnExcluir.Location = new System.Drawing.Point(244, 63);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(29, 24);
+            this.btnExcluir.TabIndex = 29;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.Image = global::JTDFROTAS.Properties.Resources.iconSub;
+            this.btnAdicionar.Location = new System.Drawing.Point(244, 33);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(29, 24);
+            this.btnAdicionar.TabIndex = 3;
+            this.btnAdicionar.UseVisualStyleBackColor = false;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // lsView
             // 
@@ -323,30 +386,6 @@
             this.columnHeader2.Text = "MOTORISTA";
             this.columnHeader2.Width = 112;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.SystemColors.Control;
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Image = global::JTDFROTAS.Properties.Resources.iconAdc;
-            this.btnExcluir.Location = new System.Drawing.Point(244, 63);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(29, 24);
-            this.btnExcluir.TabIndex = 29;
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Image = global::JTDFROTAS.Properties.Resources.iconSub;
-            this.btnAdicionar.Location = new System.Drawing.Point(244, 33);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(29, 24);
-            this.btnAdicionar.TabIndex = 3;
-            this.btnAdicionar.UseVisualStyleBackColor = false;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -373,45 +412,6 @@
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
-            // btnBuscaCliente
-            // 
-            this.btnBuscaCliente.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscaCliente.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.btnBuscaCliente.Location = new System.Drawing.Point(67, 24);
-            this.btnBuscaCliente.Name = "btnBuscaCliente";
-            this.btnBuscaCliente.Size = new System.Drawing.Size(29, 24);
-            this.btnBuscaCliente.TabIndex = 2;
-            this.btnBuscaCliente.UseVisualStyleBackColor = false;
-            this.btnBuscaCliente.Click += new System.EventHandler(this.btnBuscaCliente_Click);
-            // 
-            // btnBuscaCidadeDestino
-            // 
-            this.btnBuscaCidadeDestino.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscaCidadeDestino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaCidadeDestino.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscaCidadeDestino.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.btnBuscaCidadeDestino.Location = new System.Drawing.Point(148, 66);
-            this.btnBuscaCidadeDestino.Name = "btnBuscaCidadeDestino";
-            this.btnBuscaCidadeDestino.Size = new System.Drawing.Size(29, 24);
-            this.btnBuscaCidadeDestino.TabIndex = 7;
-            this.btnBuscaCidadeDestino.UseVisualStyleBackColor = false;
-            this.btnBuscaCidadeDestino.Click += new System.EventHandler(this.btnBuscaCidadeDestino_Click);
-            // 
-            // btnBuscaCidadeOrigem
-            // 
-            this.btnBuscaCidadeOrigem.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscaCidadeOrigem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscaCidadeOrigem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscaCidadeOrigem.Image = global::JTDFROTAS.Properties.Resources.iconSearch;
-            this.btnBuscaCidadeOrigem.Location = new System.Drawing.Point(148, 29);
-            this.btnBuscaCidadeOrigem.Name = "btnBuscaCidadeOrigem";
-            this.btnBuscaCidadeOrigem.Size = new System.Drawing.Size(29, 24);
-            this.btnBuscaCidadeOrigem.TabIndex = 5;
-            this.btnBuscaCidadeOrigem.UseVisualStyleBackColor = false;
-            this.btnBuscaCidadeOrigem.Click += new System.EventHandler(this.btnBuscaCidadeOrigem_Click);
             // 
             // FormViagem
             // 
@@ -466,7 +466,7 @@
         private System.Windows.Forms.Label txtCusto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtEntrega;
         private System.Windows.Forms.Label txtCliente;
         private System.Windows.Forms.Button btnBuscaCliente;
         private System.Windows.Forms.TextBox txtCodCliente;

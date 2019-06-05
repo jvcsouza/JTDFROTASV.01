@@ -80,6 +80,7 @@
     <Compile Include="Classes\Conexao.cs" />
     <Compile Include="Classes\APIs.cs" />
     <Compile Include="Classes\APIsClasses\MapsAPI.cs" />
+    <Compile Include="Classes\Frota.cs" />
     <Compile Include="Classes\ICRUD.cs" />
     <Compile Include="Classes\Juridica.cs" />
     <Compile Include="Classes\Fisica.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Classes\UF.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\Veiculo.cs" />
+    <Compile Include="Classes\Viagem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -24,7 +24,7 @@ namespace JTDFROTAS.Classes
         public bool Registrar()
         {
             Conexao.Query = $"INSERT INTO VEICULO (CODMODELOVEICULO, CODCLIENTE, PLACA, TIPOVEICULO, DATARESGISTRO, CUSTOMEDIOPKM, ULTIMAALTERA)" +
-                            $" VALUES ({codModelo}, {codCliente}, '{placa.ToUpper().Replace("-","")}', (SELECT ID FROM TIPOVEICULO WHERE NOME LIKE '{tipoVeiculo.ToUpper()}'), GETDATE(), (SELECT CAST({custoMedio.ToString().Replace(",",".")} AS MONEY) ), GETDATE()); " +
+                            $" VALUES ({codModelo}, {codCliente}, '{placa.ToUpper().Replace("-", "")}', (SELECT ID FROM TIPOVEICULO WHERE NOME LIKE '{tipoVeiculo.ToUpper()}'), GETDATE(), (SELECT CAST({custoMedio.ToString().Replace(",", ".")} AS MONEY) ), GETDATE()); " +
                             $"SELECT SCOPE_IDENTITY() AS ID";
             SqlDataReader dr = Conexao.ExecReader();
             if (dr.Read())
@@ -82,6 +82,21 @@ namespace JTDFROTAS.Classes
             dr.Close();
             return nome;
         }
+
+        public static int Buscar(String placa)
+        {
+            Conexao.Query = $"SELECT V.ID " +
+                            $"FROM VEICULO V " +
+                            $"WHERE V.PLACA LIKE '{placa}' AND DISPONIVEL = 1";
+            SqlDataReader dr = Conexao.ExecReader();
+            int id = 0;
+            if (dr != null)
+                if (!dr.Read()) id = 0;
+                else id = Int32.Parse(dr[0].ToString());
+            if(!dr.IsClosed) dr.Close();
+            return id;
+        }
+
         public static String consultaCustoMedio(String placa)
         {
             String custo = "";
@@ -90,7 +105,7 @@ namespace JTDFROTAS.Classes
             if (dr != null)
                 if (dr.Read())
                     custo = dr[0].ToString();
-            if(!dr.IsClosed) dr.Close();
+            if (!dr.IsClosed) dr.Close();
             return custo;
         }
     }
