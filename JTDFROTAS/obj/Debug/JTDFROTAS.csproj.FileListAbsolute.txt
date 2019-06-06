@@ -54,3 +54,4 @@ C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debu
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Pessoa.FormFisica.resources
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.Pessoa.FormJuridica.resources
 C:\Users\JOAO\documents\visual studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.VeiculoMotorista.resources
+C:\Users\JOAO\Documents\Visual Studio 2017\Projects\JTDFROTAS\JTDFROTAS\obj\Debug\JTDFROTAS.viagemReport.resources

@@ -206,6 +206,12 @@
     <Compile Include="VeiculoMotorista.Designer.cs">
       <DependentUpon>VeiculoMotorista.cs</DependentUpon>
     </Compile>
+    <Compile Include="viagemReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viagemReport.Designer.cs">
+      <DependentUpon>viagemReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VeiculoMotorista.resx">
       <DependentUpon>VeiculoMotorista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viagemReport.resx">
+      <DependentUpon>viagemReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

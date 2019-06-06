@@ -49,6 +49,7 @@
             this.btnCadFisica = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCadJuridica = new System.Windows.Forms.ToolStripMenuItem();
             this.motoristaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnListPessoa = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,7 @@
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.manutençãoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.emCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rptViagemCurso = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnSair = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@
             this.statusBarHours = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusBarUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.TimerUpdateDate = new System.Windows.Forms.Timer(this.components);
-            this.btnListPessoa = new System.Windows.Forms.ToolStripMenuItem();
             this.Bar.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -220,22 +220,29 @@
             // btnCadFisica
             // 
             this.btnCadFisica.Name = "btnCadFisica";
-            this.btnCadFisica.Size = new System.Drawing.Size(152, 22);
+            this.btnCadFisica.Size = new System.Drawing.Size(135, 22);
             this.btnCadFisica.Text = "Fisica";
             this.btnCadFisica.Click += new System.EventHandler(this.btnCadFisica_Click);
             // 
             // btnCadJuridica
             // 
             this.btnCadJuridica.Name = "btnCadJuridica";
-            this.btnCadJuridica.Size = new System.Drawing.Size(152, 22);
+            this.btnCadJuridica.Size = new System.Drawing.Size(135, 22);
             this.btnCadJuridica.Text = "Juridica";
             this.btnCadJuridica.Click += new System.EventHandler(this.btnCadJuridica_Click);
             // 
             // motoristaToolStripMenuItem
             // 
             this.motoristaToolStripMenuItem.Name = "motoristaToolStripMenuItem";
-            this.motoristaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.motoristaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.motoristaToolStripMenuItem.Text = "Motorista";
+            // 
+            // btnListPessoa
+            // 
+            this.btnListPessoa.Name = "btnListPessoa";
+            this.btnListPessoa.Size = new System.Drawing.Size(135, 22);
+            this.btnListPessoa.Text = "Pessoa";
+            this.btnListPessoa.Click += new System.EventHandler(this.btnListPessoa_Click);
             // 
             // toolStripSeparator1
             // 
@@ -294,22 +301,23 @@
             // manutençãoToolStripMenuItem1
             // 
             this.manutençãoToolStripMenuItem1.Name = "manutençãoToolStripMenuItem1";
-            this.manutençãoToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.manutençãoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.manutençãoToolStripMenuItem1.Text = "Manutenção";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emCursoToolStripMenuItem});
+            this.rptViagemCurso});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Viagem";
             // 
-            // emCursoToolStripMenuItem
+            // rptViagemCurso
             // 
-            this.emCursoToolStripMenuItem.Name = "emCursoToolStripMenuItem";
-            this.emCursoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.emCursoToolStripMenuItem.Text = "Em Curso";
+            this.rptViagemCurso.Name = "rptViagemCurso";
+            this.rptViagemCurso.Size = new System.Drawing.Size(152, 22);
+            this.rptViagemCurso.Text = "Em Curso";
+            this.rptViagemCurso.Click += new System.EventHandler(this.rptViagemCurso_Click);
             // 
             // toolStripSeparator4
             // 
@@ -379,13 +387,6 @@
             this.TimerUpdateDate.Enabled = true;
             this.TimerUpdateDate.Tick += new System.EventHandler(this.TimerUpdateDate_Tick);
             // 
-            // btnListPessoa
-            // 
-            this.btnListPessoa.Name = "btnListPessoa";
-            this.btnListPessoa.Size = new System.Drawing.Size(152, 22);
-            this.btnListPessoa.Text = "Pessoa";
-            this.btnListPessoa.Click += new System.EventHandler(this.btnListPessoa_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -441,7 +442,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem emCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rptViagemCurso;
         private System.Windows.Forms.ToolStripMenuItem manutençãoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;

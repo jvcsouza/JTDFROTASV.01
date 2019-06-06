@@ -131,5 +131,14 @@ namespace JTDFROTAS
             consPessoa.MdiParent = this;
             consPessoa.Show();
         }
+
+        private void rptViagemCurso_Click(object sender, EventArgs e)
+        {
+            viagemReport vrpt = new viagemReport();
+            vrpt.ShowDialog();
+            //rptViagemEmCurso rptViagem = new rptViagemEmCurso();
+            //rptViagem.MdiParent = Form1.container;
+            //rptViagem.ShowDialog();
+        }
     }
 }

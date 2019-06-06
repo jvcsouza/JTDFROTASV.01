@@ -35,7 +35,7 @@ namespace JTDFROTAS.Classes
         public bool Registrar()
         {
             Conexao.Query = $"INSERT INTO VIAGEM(CODCLIENTE, DESTINO, SAIDA, KMTOTAL, DATARESGISTRO, ULTIMAALTERA, CODUSUARIO, CUSTOTOTAL, DATAFINAL)  " +
-                            $"VALUES ({CodCliente}, {CidadeDestino}, {CidadeDestino}, {Kmtotal}, GETDATE(), GETDATE(), {Usuario.Id}, (SELECT CAST({Custototal.ToString().Replace(',','.')} AS MONEY) AS M), '{DataEntrega}');" +
+                            $"VALUES ({CodCliente}, {CidadeDestino}, {CidadeSaida}, {Kmtotal}, GETDATE(), GETDATE(), {Usuario.Id}, (SELECT CAST({Custototal.ToString().Replace(',','.')} AS MONEY) AS M), '{DataEntrega}');" +
                             $"SELECT SCOPE_IDENTITY() AS ID";
             SqlDataReader dr = Conexao.ExecReader();
             if (dr != null)
