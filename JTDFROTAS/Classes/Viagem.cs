@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -45,5 +46,26 @@ namespace JTDFROTAS.Classes
             return Id != 0 ? true : false;
         }
 
+        public static void Cancelar(int id)
+        {
+            Conexao.Query = $"DELETE FROM VIAGEM WHERE ID = {id}";
+            Conexao.ExecQuery();
+        }
+
+        public static DataTable Listar()
+        {
+            Conexao.Query = $"SELECT  V.ID, " +
+	                        $"P.NOME, "+
+		                    $"O.NOME AS ORIGEM," +
+                            $"D.NOME AS DESTINO," +
+                            $"V.KMTOTAL," +
+                            $"V.DATAFINAL," +
+                            $"V.CUSTOTOTAL " +
+                            $"FROM PESSOA P " +
+                            $"RIGHT JOIN VIAGEM V ON V.CODCLIENTE = P.ID " +
+                            $"INNER JOIN CIDADE O ON V.DESTINO = O.ID " +
+                            $"INNER JOIN CIDADE D ON V.SAIDA = D.ID ";
+            return Conexao.ExecAdapter();
+        }
     }
 }

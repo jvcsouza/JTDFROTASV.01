@@ -59,7 +59,7 @@ namespace JTDFROTAS.Classes
                
             }catch(Exception err)
             {
-                System.Windows.Forms.MessageBox.Show(Form1.container, err.Message, $"ERROR {err.HResult}", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                System.Windows.Forms.MessageBox.Show(Form1.container, err.Message, $"ERROR {err.HResult}", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             return reader;
         }

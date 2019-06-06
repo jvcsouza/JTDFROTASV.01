@@ -50,7 +50,6 @@
             this.btnCadJuridica = new System.Windows.Forms.ToolStripMenuItem();
             this.motoristaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnListPessoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +66,10 @@
             this.statusBarHours = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusBarUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.TimerUpdateDate = new System.Windows.Forms.Timer(this.components);
+            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnConsViagem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Bar.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +80,8 @@
             this.Bar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.Bar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
+            this.toolStripSeparator5,
+            this.toolStripDropDownButton5,
             this.toolStripSeparator1,
             this.toolStripDropDownButton2,
             this.toolStripSeparator3,
@@ -244,11 +249,6 @@
             this.btnListPessoa.Text = "Pessoa";
             this.btnListPessoa.Click += new System.EventHandler(this.btnListPessoa_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripDropDownButton2
             // 
             this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -301,7 +301,7 @@
             // manutençãoToolStripMenuItem1
             // 
             this.manutençãoToolStripMenuItem1.Name = "manutençãoToolStripMenuItem1";
-            this.manutençãoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.manutençãoToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.manutençãoToolStripMenuItem1.Text = "Manutenção";
             // 
             // toolStripMenuItem1
@@ -309,13 +309,13 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rptViagemCurso});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.toolStripMenuItem1.Text = "Viagem";
             // 
             // rptViagemCurso
             // 
             this.rptViagemCurso.Name = "rptViagemCurso";
-            this.rptViagemCurso.Size = new System.Drawing.Size(152, 22);
+            this.rptViagemCurso.Size = new System.Drawing.Size(134, 22);
             this.rptViagemCurso.Text = "Em Curso";
             this.rptViagemCurso.Click += new System.EventHandler(this.rptViagemCurso_Click);
             // 
@@ -387,6 +387,40 @@
             this.TimerUpdateDate.Enabled = true;
             this.TimerUpdateDate.Tick += new System.EventHandler(this.TimerUpdateDate_Tick);
             // 
+            // toolStripDropDownButton5
+            // 
+            this.toolStripDropDownButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnConsViagem});
+            this.toolStripDropDownButton5.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton5.Image")));
+            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
+            this.toolStripDropDownButton5.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolStripDropDownButton5.ShowDropDownArrow = false;
+            this.toolStripDropDownButton5.Size = new System.Drawing.Size(76, 22);
+            this.toolStripDropDownButton5.Text = "Consulta";
+            this.toolStripDropDownButton5.ToolTipText = "Relatórios";
+            // 
+            // btnConsViagem
+            // 
+            this.btnConsViagem.Name = "btnConsViagem";
+            this.btnConsViagem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.btnConsViagem.Size = new System.Drawing.Size(171, 22);
+            this.btnConsViagem.Text = "Viagem";
+            this.btnConsViagem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsViagem.Click += new System.EventHandler(this.btnConsViagem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -419,7 +453,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip Bar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem geralSistemaToolStripMenuItem;
@@ -455,6 +488,10 @@
         private System.Windows.Forms.ToolStripMenuItem viagenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnCadVeiculo;
         private System.Windows.Forms.ToolStripMenuItem btnListPessoa;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
+        private System.Windows.Forms.ToolStripMenuItem btnConsViagem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

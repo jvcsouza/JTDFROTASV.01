@@ -46,7 +46,7 @@ namespace JTDFROTAS
                 tool.Visible = true;
                 user.Text = Usuario.Nome;
             }
-            else MessageBox.Show("Usuario não encontrado!");
+            else MessageBox.Show(this, "Usuario não encontrado!", "Problemas!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)

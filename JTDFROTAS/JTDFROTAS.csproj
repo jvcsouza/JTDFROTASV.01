@@ -96,6 +96,12 @@
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\Veiculo.cs" />
     <Compile Include="Classes\Viagem.cs" />
+    <Compile Include="ConsultaViagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaViagem.Designer.cs">
+      <DependentUpon>ConsultaViagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <Compile Include="viagemReport.Designer.cs">
       <DependentUpon>viagemReport.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConsultaViagem.resx">
+      <DependentUpon>ConsultaViagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

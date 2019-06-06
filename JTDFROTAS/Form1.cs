@@ -140,5 +140,14 @@ namespace JTDFROTAS
             //rptViagem.MdiParent = Form1.container;
             //rptViagem.ShowDialog();
         }
+
+        private void btnConsViagem_Click(object sender, EventArgs e)
+        {
+            if (childrenAberto("Consultar Viagem"))
+                return;
+            ConsultaViagem consViagem = new ConsultaViagem();
+            consViagem.MdiParent = container;
+            consViagem.Show();
+        }
     }
 }

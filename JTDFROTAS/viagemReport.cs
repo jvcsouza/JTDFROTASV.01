@@ -16,5 +16,11 @@ namespace JTDFROTAS
         {
             InitializeComponent();
         }
+
+        private void viagemReport_Load(object sender, EventArgs e)
+        {
+            crystalReportViewer1.RefreshReport();
+            //crystalReportViewer1.ParameterFieldInfo("", "");
+        }
     }
 }
